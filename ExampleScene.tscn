@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://jus82nhlf4xl"]
+
+[ext_resource type="Material" uid="uid://bnox6xdmrgmky" path="res://My_shader_material.tres" id="1_5wblg"]
+[ext_resource type="PackedScene" uid="uid://wwvd2bvsfom1" path="res://monke.glb" id="2_gcfgo"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+material_override = ExtResource("1_5wblg")
+radial_segments = 24
+rings = 24
+
+[node name="monke" parent="." instance=ExtResource("2_gcfgo")]
+transform = Transform3D(0.415931, -0.265842, 0.869672, 0.114699, 0.964017, 0.239825, -0.902134, 0, 0.431456, -2.36843, 0, -0.252357)
+
+[node name="Suzanne" parent="monke" index="0"]
+transform = Transform3D(0.702395, 0.204984, -0.681632, -0.138293, 0.978687, 0.15181, 0.698224, -0.0123658, 0.715773, -0.241188, -0.325327, 0.0159054)
+material_override = ExtResource("1_5wblg")
+
+[node name="Text" parent="monke" index="1"]
+transform = Transform3D(0.860726, -2.73376, -0.505833, -0.36084, 30.1637, -0.685623, 0.359089, 36.8635, 0.523502, 2.13729, -1.28654, 2.21906)
+material_override = ExtResource("1_5wblg")
+
+[editable path="monke"]
