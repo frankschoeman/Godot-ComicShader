@@ -1,5 +1,5 @@
 # Godot-ComicShader
-Work in Progress cell / comic shader for the Godot game engine version 4.3 
+Work in Progress cell / comic shader for the Godot game engine version 4.x
 
 Looking for contributors.
 
