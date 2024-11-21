@@ -8,5 +8,5 @@ Looking for contributors.
 To be implemented:
 - Half-tone texture option for gradients
 - Seperate textures/colors input for light and dark with accurate colors.
-- Code optimization since the groundwork is made in the visual editor
+- Code optimization since the groundwork is made in Godot's visual editor
 - More options and parameters
