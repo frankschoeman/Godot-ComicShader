@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://bktir2x3wiawn"]
 
-[ext_resource type="Shader" path="res://OutlinePass.gdshader" id="1_lyon5"]
+[ext_resource type="Shader" uid="uid://c2b6f1flwbina" path="res://OutlinePass.gdshader" id="1_lyon5"]
 [ext_resource type="Shader" uid="uid://d3og8wexkvop7" path="res://ComicShader.tres" id="2_rvtvi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bgx3t"]

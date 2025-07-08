@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://jus82nhlf4xl"]
+[gd_scene load_steps=9 format=4 uid="uid://jus82nhlf4xl"]
 
 [ext_resource type="Material" uid="uid://bnox6xdmrgmky" path="res://mYellow.tres" id="1_5wblg"]
 [ext_resource type="Material" uid="uid://bfqsvk4k5rqic" path="res://mGreen.tres" id="1_kelfb"]
 [ext_resource type="PackedScene" uid="uid://wwvd2bvsfom1" path="res://amonke.glb" id="2_gcfgo"]
+[ext_resource type="Material" uid="uid://c056yyij8oh0a" path="res://mblue.tres" id="3_n7n8g"]
 [ext_resource type="Material" uid="uid://bktir2x3wiawn" path="res://mDarkGreen.tres" id="4_fgqed"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lygpk"]
@@ -44,24 +45,25 @@ shadow_mesh = SubResource("ArrayMesh_5xs48")
 [node name="monke" parent="." instance=ExtResource("2_gcfgo")]
 transform = Transform3D(0.415931, -0.265842, 0.869672, 0.114699, 0.964017, 0.239825, -0.902134, 0, 0.431456, -2.36843, 0, -0.252357)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="monke"]
-transform = Transform3D(0.867619, 0.341424, 0.361479, -0.496416, 0.553219, 0.668969, 0.028425, -0.759854, 0.649472, 0.757443, -0.629628, 2.16864)
-light_bake_mode = 0
-shadow_blur = 0.0
-
-[node name="CSGSphere3D" type="CSGSphere3D" parent="monke"]
-transform = Transform3D(0.415931, 0.114699, -0.902134, -0.265842, 0.964016, -1.41561e-07, 0.869672, 0.239825, 0.431456, 0.757443, -0.629628, 2.16864)
-material_override = ExtResource("1_kelfb")
-radial_segments = 24
-rings = 24
-
-[node name="Suzanne" parent="monke" index="2"]
+[node name="Suzanne" parent="monke" index="0"]
 transform = Transform3D(0.380317, 0.204984, -0.901853, -0.0680026, 0.978687, 0.19377, 0.922353, -0.0123658, 0.386152, 0.229145, -0.447454, -0.226842)
 material_override = ExtResource("1_5wblg")
 
-[node name="Text" parent="monke" index="3"]
+[node name="Text" parent="monke" index="1"]
 transform = Transform3D(0.147075, -45.7876, -0.239437, 0.394748, 13.3066, -0.875435, 0.906942, 1.63345, 0.419863, 1.82175, -1.69695, 2.06649)
 material_override = ExtResource("1_5wblg")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="monke"]
+transform = Transform3D(0.867619, 0.341424, 0.361479, -0.496416, 0.553219, 0.668969, 0.028425, -0.759854, 0.649472, 0.757443, -0.629628, 2.16864)
+light_bake_mode = 0
+shadow_enabled = true
+shadow_blur = 1.5
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="monke"]
+transform = Transform3D(0.617691, 0.170337, -1.33974, -0.394797, 1.43164, -2.15712e-07, 1.29153, 0.35616, 0.640747, 1.14993, -0.574598, 1.56094)
+material_override = ExtResource("3_n7n8g")
+radial_segments = 24
+rings = 24
 
 [node name="Camera3D" type="Camera3D" parent="monke"]
 transform = Transform3D(0.552569, 0.114699, -0.825537, -0.262537, 0.964016, -0.0417887, 0.791038, 0.239825, 0.562799, -11.3784, -0.202526, 7.44013)
