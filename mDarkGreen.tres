@@ -1,0 +1,19 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://bktir2x3wiawn"]
+
+[ext_resource type="Shader" uid="uid://c2b6f1flwbina" path="res://OutlinePass.gdshader" id="1_lyon5"]
+[ext_resource type="Shader" uid="uid://d3og8wexkvop7" path="res://ComicShader.tres" id="2_rvtvi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bgx3t"]
+render_priority = 0
+shader = ExtResource("1_lyon5")
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/size = 1.01
+
+[resource]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_bgx3t")
+shader = ExtResource("2_rvtvi")
+shader_parameter/ColorParameter = Color(0.535315, 0.588223, 0, 1)
+shader_parameter/ColorParameter2 = Color(0, 0, 0, 1)
+shader_parameter/FresnelPower = 4.68
+shader_parameter/RimLightColor = Color(0.851462, 0, 0.168228, 1)
