@@ -3,7 +3,7 @@ Work in Progress cell / comic shader for the Godot game engine version 4.x
 
 Looking for contributors.
 
-![Preview](https://i.postimg.cc/Xvg4bFqC/Screenshot-4.jpg)
+![Preview](https://i.postimg.cc/2Sbryw7p/Screenshot-7.jpg)
 
 To be implemented:
 - Half-tone texture option for gradients
