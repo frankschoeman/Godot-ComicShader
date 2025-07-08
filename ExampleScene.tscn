@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=4 uid="uid://jus82nhlf4xl"]
+[gd_scene load_steps=10 format=4 uid="uid://jus82nhlf4xl"]
 
 [ext_resource type="Material" uid="uid://bnox6xdmrgmky" path="res://mYellow.tres" id="1_5wblg"]
 [ext_resource type="Material" uid="uid://bfqsvk4k5rqic" path="res://mGreen.tres" id="1_kelfb"]
 [ext_resource type="PackedScene" uid="uid://wwvd2bvsfom1" path="res://amonke.glb" id="2_gcfgo"]
 [ext_resource type="Material" uid="uid://c056yyij8oh0a" path="res://mblue.tres" id="3_n7n8g"]
-[ext_resource type="Material" uid="uid://bktir2x3wiawn" path="res://mDarkGreen.tres" id="4_fgqed"]
+[ext_resource type="Material" uid="uid://bktir2x3wiawn" path="res://mRed.tres" id="4_fgqed"]
+[ext_resource type="Material" uid="uid://dfsui67tsqkhl" path="res://new_standard_material_3d.tres" id="6_xpmf3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lygpk"]
 
@@ -47,7 +48,7 @@ transform = Transform3D(0.415931, -0.265842, 0.869672, 0.114699, 0.964017, 0.239
 
 [node name="Suzanne" parent="monke" index="0"]
 transform = Transform3D(0.380317, 0.204984, -0.901853, -0.0680026, 0.978687, 0.19377, 0.922353, -0.0123658, 0.386152, 0.229145, -0.447454, -0.226842)
-material_override = ExtResource("1_5wblg")
+material_override = ExtResource("1_kelfb")
 
 [node name="Text" parent="monke" index="1"]
 transform = Transform3D(0.147075, -45.7876, -0.239437, 0.394748, 13.3066, -0.875435, 0.906942, 1.63345, 0.419863, 1.82175, -1.69695, 2.06649)
@@ -72,7 +73,7 @@ size = 9.108
 
 [node name="Suzanne2" type="MeshInstance3D" parent="monke"]
 transform = Transform3D(0.203465, 0.249726, -0.946698, -0.0606065, 0.968283, 0.242394, 0.977205, 0.00805738, 0.212149, -0.921422, 0.0925124, -2.63257)
-material_override = ExtResource("1_kelfb")
+material_override = ExtResource("1_5wblg")
 mesh = SubResource("ArrayMesh_c8hvc")
 skeleton = NodePath("")
 
@@ -84,6 +85,6 @@ skeleton = NodePath("")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="monke"]
 transform = Transform3D(-11.3259, -0.0174127, -0.0606961, 0.680555, -0.28749, -2.01407, 0.0428824, -0.0364084, 15.9326, -0.174107, -1.46332, -0.364042)
-material_override = ExtResource("4_fgqed")
+material_override = ExtResource("6_xpmf3")
 
 [editable path="monke"]
