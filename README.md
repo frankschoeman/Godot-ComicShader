@@ -9,6 +9,6 @@ Wishlist:
 - Reactive to (soft)shadows
 - Parameter for soft gradients between colors or textures
 - Input for 3 different colors or textures
-- Half-tone texture option for gradients
+- Dynamic half-tone texture mapped in screen space for gradients
 - Code optimization since the groundwork is made in Godot's visual editor
 - More options and parameters
