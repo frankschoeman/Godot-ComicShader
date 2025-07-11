@@ -5,7 +5,10 @@ Looking for contributors.
 
 ![Preview](https://i.postimg.cc/2Sbryw7p/Screenshot-7.jpg)
 
-To be implemented:
+Wishlist:
+- Reactive to (soft)shadows
+- Option for soft edges
+- Input for 3 different colors or textures
 - Half-tone texture option for gradients
 - Code optimization since the groundwork is made in Godot's visual editor
 - More options and parameters
