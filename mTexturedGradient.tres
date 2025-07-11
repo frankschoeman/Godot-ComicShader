@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://ddu1dvcsc8pge"]
+
+[ext_resource type="Shader" uid="uid://dxf00sboh3ru8" path="res://comicShader_TexturedGradient.tres" id="1_oh5b3"]
+[ext_resource type="Texture2D" uid="uid://bns04ti38atal" path="res://GradientRGB.png" id="2_4lt0d"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_oh5b3")
+shader_parameter/Source_Lit = Color(1, 1, 1, 1)
+shader_parameter/Source_Gradient = ExtResource("2_4lt0d")
+shader_parameter/Source_Between = Color(1, 1, 0, 1)
+shader_parameter/Source_Shaded = Color(0.848261, 0.000568713, 0.848255, 1)

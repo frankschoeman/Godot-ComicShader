@@ -1,19 +1,16 @@
-[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://bnox6xdmrgmky"]
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bnox6xdmrgmky"]
 
-[ext_resource type="Shader" uid="uid://c2b6f1flwbina" path="res://OutlinePass.gdshader" id="1_jexdi"]
-[ext_resource type="Shader" uid="uid://d3og8wexkvop7" path="res://ComicShader.tres" id="2_elodb"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_bgx3t"]
-render_priority = 0
-shader = ExtResource("1_jexdi")
-shader_parameter/color = Color(0, 0, 0, 1)
-shader_parameter/size = 1.01
+[ext_resource type="Material" uid="uid://b3apwaft8hldq" path="res://mOutlineMaterial.tres" id="1_jexdi"]
+[ext_resource type="Shader" uid="uid://dh22vh8mie7np" path="res://comicShader_v02.tres" id="2_jexdi"]
 
 [resource]
 render_priority = 0
-next_pass = SubResource("ShaderMaterial_bgx3t")
-shader = ExtResource("2_elodb")
-shader_parameter/LitColor = Color(1, 0.966667, 0, 1)
-shader_parameter/ShadedColor = Color(1, 0.62, 0.62, 1)
+next_pass = ExtResource("1_jexdi")
+shader = ExtResource("2_jexdi")
+shader_parameter/Between_Transfer = 0.205
+shader_parameter/Between_Size = 0.543
+shader_parameter/Source_Between = Color(1, 0.833333, 0, 1)
+shader_parameter/Source_Lit = Color(1, 1, 1, 1)
+shader_parameter/Source_Shaded = Color(1, 0.6, 0, 1)
 shader_parameter/FresnelPower = 2.665
-shader_parameter/RimLightColor = Color(1, 1, 1, 1)
+shader_parameter/RimLightColor = Color(0, 0.49, 0.00816666, 1)

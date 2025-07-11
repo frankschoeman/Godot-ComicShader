@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://b42k0gdbtq7bb"]
+
+[ext_resource type="Shader" uid="uid://b7y8pkkmv4v4p" path="res://comicShader_Gradient.tres" id="1_nxcrc"]
+[ext_resource type="Material" uid="uid://b3apwaft8hldq" path="res://mOutlineMaterial.tres" id="1_rlg25"]
+[ext_resource type="Texture2D" uid="uid://cxymtaot3ibne" path="res://coloredGradient.png" id="2_rlg25"]
+
+[resource]
+render_priority = 0
+next_pass = ExtResource("1_rlg25")
+shader = ExtResource("1_nxcrc")
+shader_parameter/Source_Gradient = ExtResource("2_rlg25")
+shader_parameter/FresnelPower = 3.0
+shader_parameter/RimLightColor = Color(0.425337, 0.000359344, 0.493205, 1)
