@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" load_steps=21 format=3 uid="uid://b7y8pkkmv4v4p"]
+[gd_resource type="VisualShader" load_steps=20 format=3 uid="uid://b7y8pkkmv4v4p"]
 
 [ext_resource type="Texture2D" uid="uid://cxymtaot3ibne" path="res://coloredGradient.png" id="1_no3h6"]
 
@@ -26,9 +26,6 @@ default_value = 3.0
 
 [sub_resource type="VisualShaderNodeColorOp" id="VisualShaderNodeColorOp_oooe0"]
 operator = 7
-
-[sub_resource type="VisualShaderNodeVectorFunc" id="VisualShaderNodeVectorFunc_j8cir"]
-function = 17
 
 [sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_7pm4h"]
 
@@ -118,12 +115,8 @@ void fragment() {
 	n_out7p0 = texture(Source_Gradient, vec2(n_out3p0.xy));
 
 
-// VectorFunc:17
-	vec3 n_out17p0 = floor(n_out3p0);
-
-
 // VectorFunc:12
-	vec3 n_out12p0 = -(n_out17p0);
+	vec3 n_out12p0 = -(vec3(n_out5p0));
 
 
 // FloatParameter:15
@@ -200,7 +193,7 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-1655.3, 374.631)
+graph_offset = Vector2(-590.537, 237.583)
 nodes/fragment/0/position = Vector2(760, 300)
 nodes/fragment/2/node = SubResource("VisualShaderNodeColorConstant_ixn2e")
 nodes/fragment/2/position = Vector2(160, -140)
@@ -232,12 +225,10 @@ nodes/fragment/15/node = SubResource("VisualShaderNodeFloatParameter_pitvm")
 nodes/fragment/15/position = Vector2(-1527.4, 1485.85)
 nodes/fragment/16/node = SubResource("VisualShaderNodeColorOp_oooe0")
 nodes/fragment/16/position = Vector2(40, 1200)
-nodes/fragment/17/node = SubResource("VisualShaderNodeVectorFunc_j8cir")
-nodes/fragment/17/position = Vector2(-767.403, 1125.85)
 nodes/fragment/18/node = SubResource("VisualShaderNodeVectorOp_7pm4h")
 nodes/fragment/18/position = Vector2(500, 940)
 nodes/fragment/19/node = SubResource("VisualShaderNodeClamp_no3h6")
 nodes/fragment/19/position = Vector2(280, 1180)
 nodes/fragment/20/node = SubResource("VisualShaderNodeFloatParameter_no3h6")
 nodes/fragment/20/position = Vector2(-1780, 900)
-nodes/fragment/connections = PackedInt32Array(4, 0, 3, 0, 6, 1, 4, 0, 6, 2, 4, 1, 8, 0, 7, 2, 3, 0, 7, 0, 6, 3, 5, 0, 5, 0, 3, 1, 2, 0, 0, 0, 9, 0, 14, 2, 15, 0, 9, 3, 11, 0, 10, 1, 10, 0, 13, 1, 14, 0, 10, 0, 12, 0, 13, 0, 12, 0, 16, 1, 13, 0, 16, 0, 17, 0, 12, 0, 7, 0, 18, 0, 18, 0, 0, 5, 3, 0, 17, 0, 16, 0, 19, 0, 19, 0, 18, 1, 20, 0, 5, 1)
+nodes/fragment/connections = PackedInt32Array(4, 0, 3, 0, 6, 1, 4, 0, 6, 2, 4, 1, 8, 0, 7, 2, 3, 0, 7, 0, 6, 3, 5, 0, 5, 0, 3, 1, 2, 0, 0, 0, 9, 0, 14, 2, 15, 0, 9, 3, 11, 0, 10, 1, 10, 0, 13, 1, 14, 0, 10, 0, 12, 0, 13, 0, 12, 0, 16, 1, 13, 0, 16, 0, 7, 0, 18, 0, 18, 0, 0, 5, 16, 0, 19, 0, 19, 0, 18, 1, 20, 0, 5, 1, 5, 0, 12, 0)
