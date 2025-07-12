@@ -8,6 +8,7 @@
 render_priority = 0
 next_pass = ExtResource("1_rlg25")
 shader = ExtResource("1_nxcrc")
+shader_parameter/Transfer = 1.0
 shader_parameter/Source_Gradient = ExtResource("2_rlg25")
 shader_parameter/FresnelPower = 3.0
 shader_parameter/RimLightColor = Color(0.425337, 0.000359344, 0.493205, 1)

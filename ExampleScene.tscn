@@ -97,7 +97,7 @@ mesh = SubResource("ArrayMesh_i880b")
 skeleton = NodePath("")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="monke"]
-transform = Transform3D(0.867619, 0.341424, 0.361479, -0.496416, 0.553219, 0.668969, 0.028425, -0.759854, 0.649472, 0.757443, -0.629628, 2.16864)
+transform = Transform3D(0.867619, 0.341424, 0.361479, -0.496416, 0.553219, 0.668969, 0.028425, -0.759854, 0.649472, 1.09911, -0.338835, 2.88304)
 light_bake_mode = 0
 shadow_enabled = true
 shadow_blur = 1.5
