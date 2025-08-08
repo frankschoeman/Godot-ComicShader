@@ -1,20 +1,26 @@
-[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://ddu1dvcsc8pge"]
+[gd_resource type="ShaderMaterial" load_steps=7 format=3 uid="uid://ddu1dvcsc8pge"]
 
 [ext_resource type="Material" uid="uid://b3apwaft8hldq" path="res://mOutlineMaterial.tres" id="1_4lt0d"]
 [ext_resource type="Shader" uid="uid://dxf00sboh3ru8" path="res://comicShader_TexturedGradient.tres" id="1_oh5b3"]
 [ext_resource type="Texture2D" uid="uid://cjuunyu8kd1fh" path="res://GradientRGB.tga" id="3_4lt0d"]
+[ext_resource type="Texture2D" uid="uid://blu1fmypme6te" path="res://WORLD-between.png" id="4_hocih"]
+[ext_resource type="Texture2D" uid="uid://crkny1hoerat0" path="res://WORLD-lit.png" id="5_2m7up"]
+[ext_resource type="Texture2D" uid="uid://b1j26otnipcht" path="res://WORLD-shaded.png" id="6_yhld6"]
 
 [resource]
 render_priority = 0
 next_pass = ExtResource("1_4lt0d")
 shader = ExtResource("1_oh5b3")
-shader_parameter/Source_Between = Color(1, 0.58, 0.58, 1)
+shader_parameter/Texture_Between = ExtResource("4_hocih")
+shader_parameter/Source_Between = Color(1, 1, 1, 1)
 shader_parameter/Light_Direction_X = 0.0
 shader_parameter/Light_Direction_Y = 0.0
 shader_parameter/Light_Direction_Z = 0.0
 shader_parameter/Transfer = 0.535
 shader_parameter/GradientTexture_required = ExtResource("3_4lt0d")
-shader_parameter/Source_Lit = Color(1, 0.926667, 0.8, 1)
-shader_parameter/Source_Shaded = Color(0.801113, 0.49843, 0.485939, 1)
-shader_parameter/FresnelPower = 2.35
-shader_parameter/RimLightColor = Color(0, 0.333517, 0.618377, 1)
+shader_parameter/Texture_Lit = ExtResource("5_2m7up")
+shader_parameter/Source_Lit = Color(1, 1, 1, 1)
+shader_parameter/Texture_Shaded = ExtResource("6_yhld6")
+shader_parameter/Source_Shaded = Color(1, 1, 1, 1)
+shader_parameter/FresnelPower = 4.895
+shader_parameter/RimLightColor = Color(0, 0.766667, 1, 1)
