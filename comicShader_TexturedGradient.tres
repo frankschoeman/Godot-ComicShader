@@ -9,9 +9,6 @@ function = 2
 parameter_name = "Source_Between"
 default_value_enabled = true
 
-[sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_ixn2e"]
-constant = Color(0, 0, 0, 1)
-
 [sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_hr4xb"]
 parameter_name = "Texture_Between"
 texture_type = 1
@@ -105,7 +102,6 @@ operator = 1
 default_input_values = [2, false, 3, 4.695]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wes1b"]
-load_path = "res://.godot/imported/GradientRGB.png-1d8ac15a2c3b82b8248bfa1c00425c9b.ctex"
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_5hqqg"]
 expanded_output_ports = [0]
@@ -143,6 +139,9 @@ function = 2
 
 [sub_resource type="VisualShaderNodeMix" id="VisualShaderNodeMix_e2vl8"]
 
+[sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_dmd0d"]
+constant = -0.01
+
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_uplc0"]
 expanded_output_ports = [0]
 source = 5
@@ -174,8 +173,8 @@ uniform vec4 RimLightColor : source_color = vec4(0.000000, 0.517647, 0.623529, 1
 
 
 void fragment() {
-// ColorConstant:2
-	vec4 n_out2p0 = vec4(0.000000, 0.000000, 0.000000, 1.000000);
+// FloatConstant:65
+	float n_out65p0 = -0.010000;
 
 
 	vec4 n_out21p0;
@@ -345,16 +344,14 @@ void fragment() {
 
 
 // Output:0
-	ALBEDO = vec3(n_out2p0.xyz);
+	ALBEDO = vec3(n_out65p0);
 	EMISSION = n_out18p0;
 
 
 }
 "
-graph_offset = Vector2(-1729.03, 334.536)
+graph_offset = Vector2(87.9686, -16.3678)
 nodes/fragment/0/position = Vector2(960, 340)
-nodes/fragment/2/node = SubResource("VisualShaderNodeColorConstant_ixn2e")
-nodes/fragment/2/position = Vector2(700, 320)
 nodes/fragment/3/node = SubResource("VisualShaderNodeVectorOp_blxwq")
 nodes/fragment/3/position = Vector2(-1280, 420)
 nodes/fragment/4/node = SubResource("VisualShaderNodeVectorOp_cuy0g")
@@ -366,7 +363,7 @@ nodes/fragment/6/position = Vector2(-2620, 380)
 nodes/fragment/7/node = SubResource("VisualShaderNodeTexture_uplc0")
 nodes/fragment/7/position = Vector2(-720, 420)
 nodes/fragment/8/node = SubResource("VisualShaderNodeTexture2DParameter_2rbrc")
-nodes/fragment/8/position = Vector2(-1100, 680)
+nodes/fragment/8/position = Vector2(-1080, 680)
 nodes/fragment/12/node = SubResource("VisualShaderNodeVectorFunc_4kbg3")
 nodes/fragment/12/position = Vector2(-1160, 1100)
 nodes/fragment/18/node = SubResource("VisualShaderNodeVectorOp_7pm4h")
@@ -439,4 +436,6 @@ nodes/fragment/63/node = SubResource("VisualShaderNodeVectorFunc_hr4xb")
 nodes/fragment/63/position = Vector2(-2200, 960)
 nodes/fragment/64/node = SubResource("VisualShaderNodeMix_e2vl8")
 nodes/fragment/64/position = Vector2(-1940, 1000)
-nodes/fragment/connections = PackedInt32Array(4, 0, 3, 0, 8, 0, 7, 2, 5, 0, 3, 1, 2, 0, 0, 0, 20, 0, 21, 2, 21, 0, 22, 0, 19, 0, 22, 1, 27, 0, 23, 2, 23, 0, 26, 0, 28, 0, 24, 2, 24, 0, 30, 0, 25, 0, 26, 1, 29, 0, 30, 1, 22, 0, 32, 0, 26, 0, 33, 0, 7, 1, 33, 1, 7, 2, 32, 1, 30, 0, 31, 0, 7, 3, 31, 1, 35, 0, 5, 1, 32, 0, 36, 0, 33, 0, 36, 1, 36, 0, 37, 0, 31, 0, 37, 1, 37, 0, 18, 0, 18, 0, 0, 5, 3, 0, 12, 0, 47, 0, 50, 3, 45, 0, 49, 1, 49, 0, 46, 1, 46, 0, 48, 0, 51, 4, 49, 0, 50, 0, 51, 0, 48, 0, 18, 1, 8, 0, 51, 2, 3, 0, 7, 0, 55, 0, 58, 2, 6, 1, 58, 0, 52, 0, 58, 1, 58, 0, 4, 0, 59, 0, 60, 2, 61, 0, 60, 1, 6, 1, 52, 0, 6, 2, 61, 0, 6, 2, 60, 0, 60, 0, 4, 1, 62, 0, 64, 2, 63, 0, 64, 1, 6, 3, 63, 0, 6, 3, 64, 0, 64, 0, 5, 0, 12, 0, 46, 0)
+nodes/fragment/65/node = SubResource("VisualShaderNodeFloatConstant_dmd0d")
+nodes/fragment/65/position = Vector2(760, 200)
+nodes/fragment/connections = PackedInt32Array(4, 0, 3, 0, 8, 0, 7, 2, 5, 0, 3, 1, 20, 0, 21, 2, 21, 0, 22, 0, 19, 0, 22, 1, 27, 0, 23, 2, 23, 0, 26, 0, 28, 0, 24, 2, 24, 0, 30, 0, 25, 0, 26, 1, 29, 0, 30, 1, 22, 0, 32, 0, 26, 0, 33, 0, 7, 1, 33, 1, 7, 2, 32, 1, 30, 0, 31, 0, 7, 3, 31, 1, 35, 0, 5, 1, 32, 0, 36, 0, 33, 0, 36, 1, 36, 0, 37, 0, 31, 0, 37, 1, 37, 0, 18, 0, 3, 0, 12, 0, 47, 0, 50, 3, 45, 0, 49, 1, 49, 0, 46, 1, 46, 0, 48, 0, 51, 4, 49, 0, 50, 0, 51, 0, 48, 0, 18, 1, 8, 0, 51, 2, 3, 0, 7, 0, 55, 0, 58, 2, 6, 1, 58, 0, 52, 0, 58, 1, 58, 0, 4, 0, 59, 0, 60, 2, 61, 0, 60, 1, 6, 1, 52, 0, 6, 2, 61, 0, 6, 2, 60, 0, 60, 0, 4, 1, 62, 0, 64, 2, 63, 0, 64, 1, 6, 3, 63, 0, 6, 3, 64, 0, 64, 0, 5, 0, 12, 0, 46, 0, 18, 0, 0, 5, 65, 0, 0, 0)

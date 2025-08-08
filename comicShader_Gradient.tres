@@ -5,9 +5,6 @@ function = 2
 
 [sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_7pm4h"]
 
-[sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_ixn2e"]
-constant = Color(0, 0, 0, 1)
-
 [sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_no3h6"]
 parameter_name = "Transfer"
 default_value_enabled = true
@@ -66,7 +63,6 @@ parameter_name = "Light_Direction_X"
 hint = 1
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wes1b"]
-load_path = "res://.godot/imported/GradientRGB.png-1d8ac15a2c3b82b8248bfa1c00425c9b.ctex"
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_wes1b"]
 expanded_output_ports = [0]
@@ -80,6 +76,9 @@ function = 2
 
 [sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_d7v8i"]
 parameter_name = "Light_Direction_Z"
+
+[sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_wes1b"]
+constant = -0.01
 
 [sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_ykxff"]
 default_input_values = [0, 0.0, 1, 1.0]
@@ -115,8 +114,8 @@ uniform vec4 RimLightColor : source_color = vec4(0.000000, 0.517647, 0.623529, 1
 
 
 void fragment() {
-// ColorConstant:2
-	vec4 n_out2p0 = vec4(0.000000, 0.000000, 0.000000, 1.000000);
+// FloatConstant:46
+	float n_out46p0 = -0.010000;
 
 
 // Input:39
@@ -224,16 +223,14 @@ void fragment() {
 
 
 // Output:0
-	ALBEDO = vec3(n_out2p0.xyz);
+	ALBEDO = vec3(n_out46p0);
 	EMISSION = n_out18p0;
 
 
 }
 "
-graph_offset = Vector2(-1611.73, 139.978)
+graph_offset = Vector2(-466.117, 314.424)
 nodes/fragment/0/position = Vector2(400, 580)
-nodes/fragment/2/node = SubResource("VisualShaderNodeColorConstant_ixn2e")
-nodes/fragment/2/position = Vector2(140, 540)
 nodes/fragment/3/node = SubResource("VisualShaderNodeVectorOp_blxwq")
 nodes/fragment/3/position = Vector2(-1060, 460)
 nodes/fragment/4/node = SubResource("VisualShaderNodeVectorOp_cuy0g")
@@ -284,4 +281,6 @@ nodes/fragment/44/node = SubResource("VisualShaderNodeVectorFunc_no3h6")
 nodes/fragment/44/position = Vector2(-2080, 880)
 nodes/fragment/45/node = SubResource("VisualShaderNodeFloatParameter_d7v8i")
 nodes/fragment/45/position = Vector2(-2100, 1080)
-nodes/fragment/connections = PackedInt32Array(8, 0, 7, 2, 5, 0, 3, 1, 2, 0, 0, 0, 7, 0, 18, 0, 18, 0, 0, 5, 20, 0, 5, 1, 3, 0, 7, 0, 28, 0, 30, 3, 27, 0, 29, 1, 29, 0, 32, 1, 32, 0, 31, 0, 12, 0, 32, 0, 31, 0, 18, 1, 4, 0, 3, 0, 41, 0, 40, 2, 39, 1, 40, 0, 38, 0, 40, 1, 35, 0, 36, 2, 37, 0, 36, 1, 39, 1, 38, 0, 39, 2, 37, 0, 39, 2, 36, 0, 36, 0, 4, 1, 40, 0, 4, 0, 30, 0, 42, 0, 42, 4, 29, 0, 8, 0, 42, 2, 3, 0, 12, 0, 45, 0, 43, 2, 44, 0, 43, 1, 39, 3, 44, 0, 39, 3, 43, 0, 43, 0, 5, 0)
+nodes/fragment/46/node = SubResource("VisualShaderNodeFloatConstant_wes1b")
+nodes/fragment/46/position = Vector2(160, 560)
+nodes/fragment/connections = PackedInt32Array(8, 0, 7, 2, 5, 0, 3, 1, 7, 0, 18, 0, 18, 0, 0, 5, 20, 0, 5, 1, 3, 0, 7, 0, 28, 0, 30, 3, 27, 0, 29, 1, 29, 0, 32, 1, 32, 0, 31, 0, 12, 0, 32, 0, 31, 0, 18, 1, 4, 0, 3, 0, 41, 0, 40, 2, 39, 1, 40, 0, 38, 0, 40, 1, 35, 0, 36, 2, 37, 0, 36, 1, 39, 1, 38, 0, 39, 2, 37, 0, 39, 2, 36, 0, 36, 0, 4, 1, 40, 0, 4, 0, 30, 0, 42, 0, 42, 4, 29, 0, 8, 0, 42, 2, 3, 0, 12, 0, 45, 0, 43, 2, 44, 0, 43, 1, 39, 3, 44, 0, 39, 3, 43, 0, 43, 0, 5, 0, 46, 0, 0, 0)
