@@ -7,10 +7,12 @@
 render_priority = 0
 next_pass = ExtResource("1_h16h7")
 shader = ExtResource("2_h16h7")
+shader_parameter/Light_Direction_X = 0.0
+shader_parameter/Light_Direction_Y = 0.0
 shader_parameter/Between_Transfer = 0.0
-shader_parameter/Between_Size = 0.232
+shader_parameter/Between_Size = 0.251
 shader_parameter/Source_Between = Color(0.692482, 0, 0, 1)
 shader_parameter/Source_Lit = Color(0.905269, 3.34509e-06, 1.15514e-06, 1)
 shader_parameter/Source_Shaded = Color(0, 0, 0, 1)
-shader_parameter/FresnelPower = 3.0
-shader_parameter/RimLightColor = Color(0, 0.330667, 0.62, 1)
+shader_parameter/FresnelPower = 2.9
+shader_parameter/RimLightColor = Color(2.29102e-05, 0.438166, 0.808142, 1)

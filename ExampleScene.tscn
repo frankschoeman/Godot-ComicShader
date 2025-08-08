@@ -83,61 +83,56 @@ shadow_mesh = SubResource("ArrayMesh_5xs48")
 transform = Transform3D(0.415931, -0.265842, 0.869672, 0.114699, 0.964017, 0.239825, -0.902134, 0, 0.431456, -2.36843, 0, -0.252357)
 
 [node name="Suzanne" parent="monke" index="0"]
-transform = Transform3D(0.696175, 0.344231, -0.629957, -0.0401767, 0.894842, 0.444572, 0.716749, -0.28419, 0.636796, 0.14711, -0.480733, -0.398369)
-material_override = ExtResource("1_kelfb")
+transform = Transform3D(-0.192816, 0.890137, -0.412893, -0.178834, 0.381862, 0.906752, 0.964803, 0.248676, 0.0855585, 0.345547, -0.781737, 0.0165429)
+material_override = ExtResource("5_p3r26")
 
 [node name="Text" parent="monke" index="1"]
-transform = Transform3D(0.147075, -45.7876, -0.239437, 0.394748, 13.3066, -0.875435, 0.906942, 1.63345, 0.419863, 1.82175, -1.69695, 2.06649)
+transform = Transform3D(0.147075, -45.7876, -0.239437, 0.394748, 13.3066, -0.875435, 0.906942, 1.63345, 0.419863, 1.55079, -1.52376, 1.49993)
 material_override = ExtResource("1_5wblg")
 
-[node name="Suzanne4" type="MeshInstance3D" parent="monke"]
-transform = Transform3D(0.410714, -0.312281, -0.856618, -0.686314, 0.512625, -0.515938, 0.600242, 0.799811, -0.00377965, 0.487858, 1.72696, 0.314104)
-material_override = ExtResource("5_p3r26")
+[node name="Suzanne4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.875294, 0.429409, -0.222423, -0.143602, 0.669985, 0.728354, 0.461783, -0.605582, 0.648098, -3.98307, 2.14592, 0.508635)
+material_override = ExtResource("1_kelfb")
 mesh = SubResource("ArrayMesh_i880b")
 skeleton = NodePath("")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="monke"]
-transform = Transform3D(0.867619, 0.341424, 0.361479, -0.496416, 0.553219, 0.668969, 0.028425, -0.759854, 0.649472, 1.09911, -0.338835, 2.88304)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.517558, -0.665884, 0.537338, -0.372221, 0.390242, 0.842118, -0.770444, -0.635854, -0.0458835, 0.6861, 0.490849, 3.33786e-06)
 light_bake_mode = 0
 shadow_enabled = true
 shadow_blur = 1.5
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="monke"]
-transform = Transform3D(0.617691, 0.170337, -1.33974, -0.394797, 1.43164, -2.15712e-07, 1.29153, 0.35616, 0.640747, 1.14993, -0.574598, 1.56094)
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(1.48508, 8.64267e-07, 4.76837e-07, -1.2815e-06, 1.48508, 1.49012e-07, -1.60933e-06, 5.36442e-07, 1.48508, -7.5579, 1.22377, -1.09374)
 material_override = ExtResource("5_nnq3s")
 radial_segments = 24
 rings = 24
 
-[node name="CSGSphere3D2" type="CSGSphere3D" parent="monke"]
-transform = Transform3D(0.617691, 0.170337, -1.33974, -0.394797, 1.43164, -2.06227e-07, 1.29153, 0.35616, 0.640747, 1.571, 0.890495, 2.44136)
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="."]
+transform = Transform3D(1.48508, 8.34465e-07, 4.17233e-07, -1.2815e-06, 1.48508, 1.3411e-07, -1.60933e-06, 5.36442e-07, 1.48508, -7.57443, 3.11073, -1.22031)
 material_override = ExtResource("6_nnq3s")
 radial_segments = 24
 rings = 24
 
-[node name="Camera3D" type="Camera3D" parent="monke"]
-transform = Transform3D(0.552569, 0.227846, -0.801719, -0.262537, 0.960523, 0.0920287, 0.791038, 0.159629, 0.590574, -10.8666, 1.8043, 7.99216)
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.987568, -0.0217545, 0.155681, -3.27826e-07, 0.990377, 0.138395, -0.157193, -0.136675, 0.978065, -0.417287, 2.40971, 12.999)
 fov = 26.8
 size = 9.108
 
-[node name="Suzanne2" type="MeshInstance3D" parent="monke"]
-transform = Transform3D(0.461854, 0.685981, -0.562245, -0.68959, 0.676386, 0.25878, 0.557815, 0.268201, 0.785439, -0.977418, 0.0583041, -2.64207)
+[node name="Suzanne2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.903178, -0.419532, 0.0909063, 0.240539, 0.670012, 0.702303, -0.355546, -0.612437, 0.706052, -4.27441, -0.816164, -0.510531)
 material_override = ExtResource("1_5wblg")
 mesh = SubResource("ArrayMesh_c8hvc")
 skeleton = NodePath("")
 
-[node name="Suzanne3" type="MeshInstance3D" parent="monke"]
-transform = Transform3D(0.380317, 0.204984, -0.901853, -0.0680025, 0.978687, 0.19377, 0.922353, -0.0123658, 0.386152, -2.12606, 0.604863, -5.15135)
+[node name="Suzanne3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.978408, -0.185671, -0.0907952, 0.19927, 0.964017, 0.175965, 0.0548579, -0.190258, 0.9802, -7.43493, -0.549176, -0.556947)
 material_override = ExtResource("4_fgqed")
 mesh = SubResource("ArrayMesh_c8hvc")
 skeleton = NodePath("")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="monke"]
-transform = Transform3D(-11.3259, -0.0174127, -0.0606961, 0.680555, -0.28749, -2.01407, 0.0428824, -0.0364084, 15.9326, -0.174107, -1.46332, -0.364042)
-material_override = ExtResource("6_xpmf3")
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="monke"]
-transform = Transform3D(-11.3259, -0.0174127, -0.0606956, 0.680555, -0.28749, -2.01407, 0.042882, -0.0364084, 15.9326, 0.567552, 4.77013, 1.1867)
-visible = false
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(-26.6454, 0, 0, 0, 1, 0, 0, 0, 16.1589, -2.80805, -1.9597, -2.0405)
 material_override = ExtResource("6_xpmf3")
 
 [editable path="monke"]

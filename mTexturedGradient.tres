@@ -2,16 +2,19 @@
 
 [ext_resource type="Material" uid="uid://b3apwaft8hldq" path="res://mOutlineMaterial.tres" id="1_4lt0d"]
 [ext_resource type="Shader" uid="uid://dxf00sboh3ru8" path="res://comicShader_TexturedGradient.tres" id="1_oh5b3"]
-[ext_resource type="Texture2D" uid="uid://bns04ti38atal" path="res://GradientRGB.png" id="2_4lt0d"]
+[ext_resource type="Texture2D" uid="uid://cjuunyu8kd1fh" path="res://GradientRGB.tga" id="3_4lt0d"]
 
 [resource]
 render_priority = 0
 next_pass = ExtResource("1_4lt0d")
 shader = ExtResource("1_oh5b3")
-shader_parameter/Source_Between = Color(1, 0.56, 0.706667, 1)
-shader_parameter/Transfer = 0.61
-shader_parameter/Source_Gradient = ExtResource("2_4lt0d")
-shader_parameter/Source_Lit = Color(0.93483, 0.94, 0.8366, 1)
-shader_parameter/Source_Shaded = Color(0.423711, 0.481639, 0.886631, 1)
-shader_parameter/FresnelPower = 4.0
-shader_parameter/RimLightColor = Color(0.629675, 0.629675, 0.629675, 1)
+shader_parameter/Source_Between = Color(1, 0.58, 0.58, 1)
+shader_parameter/Light_Direction_X = 0.0
+shader_parameter/Light_Direction_Y = 0.0
+shader_parameter/Light_Direction_Z = 0.0
+shader_parameter/Transfer = 0.535
+shader_parameter/GradientTexture_required = ExtResource("3_4lt0d")
+shader_parameter/Source_Lit = Color(1, 0.926667, 0.8, 1)
+shader_parameter/Source_Shaded = Color(0.801113, 0.49843, 0.485939, 1)
+shader_parameter/FresnelPower = 2.35
+shader_parameter/RimLightColor = Color(0, 0.333517, 0.618377, 1)
