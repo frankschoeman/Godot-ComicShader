@@ -8,6 +8,6 @@ Looking for contributors.
 ![Preview](https://i.postimg.cc/Y2xKG151/kyubuscomicshader.jpg)
 
 Wishlist:
-- Toggle react to (soft)shadows and light direction
+- A version that reacts to (soft)shadows and light direction
 - Dynamic half-tone texture (mapped in screen space) for gradients
 - Code optimization since the groundwork is made in Godot's visual editor
