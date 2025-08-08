@@ -5,7 +5,7 @@ Supports upto 3 inputs to determine colour. Soft or hard banding and rimlight
 
 Looking for contributors.
 
-![Preview](https://i.postimg.cc/1tKJwCHH/kyubuscomicshader.jpg)
+![Preview](https://i.postimg.cc/Y2xKG151/kyubuscomicshader.jpg)
 
 Wishlist:
 - Toggle react to (soft)shadows and light direction
