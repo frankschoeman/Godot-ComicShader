@@ -1,5 +1,6 @@
 # Godot-Comic Shader
-Work in Progress cell / comic shader for the Godot game engine version 4.x
+Work in Progress cell / comic / toon shader for the Godot game engine version 4.x
+Supports upto 3 inputs to determine colour. Soft or hard banding and rimlight
 
 Looking for contributors.
 
