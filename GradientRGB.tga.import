@@ -16,7 +16,7 @@ dest_files=["res://.godot/imported/GradientRGB.tga-b0b4fa5f19f4e919e8bbd42625fa2
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
