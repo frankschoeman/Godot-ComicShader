@@ -15,8 +15,8 @@ dest_files=["res://.godot/imported/WORLD-lit.png-82bbd4d04335cbe3917ec7a8378c0c0
 
 [params]
 
-compress/mode=0
-compress/high_quality=false
+compress/mode=2
+compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0

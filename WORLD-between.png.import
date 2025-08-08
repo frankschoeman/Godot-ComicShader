@@ -15,8 +15,8 @@ dest_files=["res://.godot/imported/WORLD-between.png-2af46093f776bdb17e3d55cd007
 
 [params]
 
-compress/mode=0
-compress/high_quality=false
+compress/mode=2
+compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0

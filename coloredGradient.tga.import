@@ -16,7 +16,7 @@ dest_files=["res://.godot/imported/coloredGradient.tga-48c5eb88a6b83bdb2272aa2a0
 [params]
 
 compress/mode=0
-compress/high_quality=false
+compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
