@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [rendering]
 
+lights_and_shadows/directional_shadow/soft_shadow_filter_quality=0
 anti_aliasing/quality/msaa_3d=3
-environment/defaults/default_clear_color=Color(0.4473, 0.58128, 0.63, 1)
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
 anti_aliasing/quality/use_taa=true
