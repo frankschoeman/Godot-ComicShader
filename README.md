@@ -4,7 +4,7 @@ Work in Progress cell / comic shader for the Godot game engine version 4.x
 Supports upto 3 inputs to determine colour. Soft or hard banding and rimlight
 
 
-|Shader variants information     |
+|Shader variants information     ||
 |-------------------------------|-------------|
 |comicShader_TexturedGradient  |Soft banding by a required gradient texture that will be mapped on the normals of the geometry. If you use texture input for each band, make sure the source color for each shade is set to white|
 |comicShader_v02	            |Hard banding, if you use texture input for each band, make sure the source color for each shade is white|
