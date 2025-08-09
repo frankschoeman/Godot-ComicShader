@@ -7,7 +7,7 @@
 render_priority = 0
 next_pass = ExtResource("1_g8mlv")
 shader = ExtResource("2_g8mlv")
-shader_parameter/Light_Direction_X = 0.0
+shader_parameter/Light_Direction_X = 1.0
 shader_parameter/Light_Direction_Y = 0.0
 shader_parameter/Light_Direction_Z = 0.0
 shader_parameter/Between_Transfer = -0.205
@@ -16,4 +16,4 @@ shader_parameter/Source_Between = Color(3.0563e-06, 0.56604, 0.260933, 1)
 shader_parameter/Source_Lit = Color(0.842138, 0.870426, 0, 1)
 shader_parameter/Source_Shaded = Color(0.137367, 0.256274, 0.357188, 1)
 shader_parameter/FresnelPower = 3.0
-shader_parameter/RimLightColor = Color(0.00967536, 0.28107, 0.358651, 1)
+shader_parameter/RimLightColor = Color(0.625575, 1.43189e-06, 5.77569e-07, 1)
