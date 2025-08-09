@@ -87,11 +87,11 @@ transform = Transform3D(-0.192816, 0.890137, -0.412893, -0.178834, 0.381862, 0.9
 material_override = ExtResource("5_p3r26")
 
 [node name="Text" parent="monke" index="1"]
-transform = Transform3D(0.147075, -45.7876, -0.239437, 0.394748, 13.3066, -0.875435, 0.906942, 1.63345, 0.419863, 1.55079, -1.52376, 1.49993)
+transform = Transform3D(0.147075, -45.7876, -0.239437, 0.394748, 13.3066, -0.875435, 0.906942, 1.63345, 0.419863, 2.54239, -2.15755, 3.57328)
 material_override = ExtResource("1_5wblg")
 
 [node name="Suzanne4" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.875294, 0.429409, -0.222423, -0.143602, 0.669985, 0.728354, 0.461783, -0.605582, 0.648098, -3.98307, 2.14592, 0.508635)
+transform = Transform3D(0.911411, 0.318786, 0.260214, -0.379772, 0.895105, 0.233582, -0.158454, -0.311711, 0.936873, 1.97073, 1.82258, -0.556948)
 material_override = ExtResource("1_kelfb")
 mesh = SubResource("ArrayMesh_i880b")
 skeleton = NodePath("")
@@ -103,7 +103,7 @@ shadow_enabled = true
 shadow_blur = 1.5
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="."]
-transform = Transform3D(1.48508, 8.64267e-07, 4.76837e-07, -1.2815e-06, 1.48508, 1.49012e-07, -1.60933e-06, 5.36442e-07, 1.48508, -7.5579, 1.22377, -1.09374)
+transform = Transform3D(-1.38681, -9.98972e-07, -0.531237, -1.2815e-06, 1.48508, 1.49012e-07, 0.531238, -1.91784e-07, -1.38681, -7.5579, 1.22377, -1.09374)
 material_override = ExtResource("5_nnq3s")
 radial_segments = 24
 rings = 24

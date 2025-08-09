@@ -18,5 +18,5 @@ config/icon="res://icon.svg"
 [rendering]
 
 anti_aliasing/quality/msaa_3d=3
-environment/defaults/default_clear_color=Color(0.216, 0.7176, 0.9, 1)
+environment/defaults/default_clear_color=Color(0.4473, 0.58128, 0.63, 1)
 anti_aliasing/quality/use_taa=true
