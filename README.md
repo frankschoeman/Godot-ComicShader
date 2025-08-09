@@ -1,7 +1,7 @@
 # Godot-Comic Shader
-Work in Progress cell / comic shader for the Godot game engine version 4.x
+![Preview](https://i.postimg.cc/Dy3bTN6K/kyubuscomicshader4.jpg)
 
-Supports upto 3 inputs to determine colour. Soft or hard banding and rimlight
+Work in progress Comic / Cell / Toon shader for the Godot game engine version 4.x. Supports upto 3 inputs to determine colour. Soft or hard banding and rimlight
 
 
 |Shader Files     |Description|
@@ -11,8 +11,6 @@ Supports upto 3 inputs to determine colour. Soft or hard banding and rimlight
 |comicShader_Gradient          |Gradient mapped to geometry, Can be useful if you want to use more then 3 colour gradients on an object or material ID|
 |comicShader_AdvancedLighting   |Reactive to scene light and shadow casting. Make sure the environment colour is set to black (In my opinion this one does not look great)|
 
-
-![Preview](https://i.postimg.cc/Dy3bTN6K/kyubuscomicshader4.jpg)
 
 Wishlist:
 - Dynamic half-tone texture (mapped in screen space) for gradients
