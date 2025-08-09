@@ -21,3 +21,9 @@ comicShader_AdvancedLighting	- Reactive to scene light and shadow casting (In my
 Wishlist:
 - Dynamic half-tone texture (mapped in screen space) for gradients
 - Code optimization since the groundwork is made in Godot's visual editor
+
+| Tables   |      Are      |  Cool |
+|----------|:-------------:|------:|
+| col 1 is |  left-aligned | $1600 |
+| col 2 is |    centered   |   $12 |
+| col 3 is | right-aligned |    $1 |
