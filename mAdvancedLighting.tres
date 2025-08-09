@@ -1,0 +1,21 @@
+[gd_resource type="ShaderMaterial" load_steps=7 format=3 uid="uid://b3an7argoyrp6"]
+
+[ext_resource type="Material" uid="uid://b3apwaft8hldq" path="res://mOutlineMaterial.tres" id="1_lgtuw"]
+[ext_resource type="Shader" uid="uid://cbj5lflxb3moq" path="res://comicShader_AdvancedLighting.tres" id="2_lgtuw"]
+[ext_resource type="Texture2D" uid="uid://bpu5cwaqbuett" path="res://GradientRGB2.tga" id="3_lgtuw"]
+[ext_resource type="Texture2D" uid="uid://blu1fmypme6te" path="res://WORLD-between.png" id="4_dbs2s"]
+[ext_resource type="Texture2D" uid="uid://crkny1hoerat0" path="res://WORLD-lit.png" id="5_m3pxg"]
+[ext_resource type="Texture2D" uid="uid://b1j26otnipcht" path="res://WORLD-shaded.png" id="6_4dto7"]
+
+[resource]
+render_priority = 0
+next_pass = ExtResource("1_lgtuw")
+shader = ExtResource("2_lgtuw")
+shader_parameter/Texture_Between2 = ExtResource("4_dbs2s")
+shader_parameter/Source_Between2 = Color(1, 1, 1, 1)
+shader_parameter/GradientTexture_required2 = ExtResource("3_lgtuw")
+shader_parameter/Texture_Lit2 = ExtResource("5_m3pxg")
+shader_parameter/Source_Lit2 = Color(1, 1, 1, 1)
+shader_parameter/Texture_Shaded2 = ExtResource("6_4dto7")
+shader_parameter/Source_Shaded2 = Color(1, 1, 1, 1)
+shader_parameter/RimLightColor2 = Color(0, 0.517647, 0.623529, 1)

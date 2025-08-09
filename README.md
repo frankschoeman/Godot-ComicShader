@@ -8,6 +8,5 @@ Looking for contributors.
 ![Preview](https://i.postimg.cc/Dy3bTN6K/kyubuscomicshader4.jpg)
 
 Wishlist:
-- A version that reacts to (soft)shadows and light direction
 - Dynamic half-tone texture (mapped in screen space) for gradients
 - Code optimization since the groundwork is made in Godot's visual editor
