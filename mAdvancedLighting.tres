@@ -18,4 +18,5 @@ shader_parameter/Texture_Lit2 = ExtResource("5_m3pxg")
 shader_parameter/Source_Lit2 = Color(1, 1, 1, 1)
 shader_parameter/Texture_Shaded2 = ExtResource("6_4dto7")
 shader_parameter/Source_Shaded2 = Color(1, 1, 1, 1)
-shader_parameter/RimLightColor2 = Color(0, 0.517647, 0.623529, 1)
+shader_parameter/FresnelPower2 = 7.515
+shader_parameter/RimLightColor2 = Color(0.495413, 0.886288, 1, 1)
