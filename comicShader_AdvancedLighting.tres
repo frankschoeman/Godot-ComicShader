@@ -3,11 +3,11 @@
 [sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_lvjx8"]
 
 [sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_5qd4w"]
-parameter_name = "Source_Between2"
+parameter_name = "Source_Between"
 default_value_enabled = true
 
 [sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_xrwh5"]
-parameter_name = "Texture_Between2"
+parameter_name = "Texture_Between"
 texture_type = 1
 texture_repeat = 2
 
@@ -24,14 +24,14 @@ source = 5
 source = 5
 
 [sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_2wwta"]
-parameter_name = "Source_Lit2"
+parameter_name = "Source_Lit"
 default_value_enabled = true
 
 [sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_mwu7k"]
 operator = 2
 
 [sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_qmu6d"]
-parameter_name = "Texture_Lit2"
+parameter_name = "Texture_Lit"
 texture_type = 1
 texture_repeat = 2
 
@@ -39,12 +39,12 @@ texture_repeat = 2
 input_name = "attenuation"
 
 [sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_n2xvd"]
-parameter_name = "Texture_Shaded2"
+parameter_name = "Texture_Shaded"
 texture_type = 1
 texture_repeat = 2
 
 [sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_uwrhd"]
-parameter_name = "Source_Shaded2"
+parameter_name = "Source_Shaded"
 default_value_enabled = true
 
 [sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_wa0hh"]
@@ -69,7 +69,7 @@ default_value = 1.0
 [sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_kfcr1"]
 
 [sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_0cmsh"]
-parameter_name = "RimLightColor2"
+parameter_name = "RimLightColor"
 default_value_enabled = true
 default_value = Color(0, 0.517647, 0.623529, 1)
 
@@ -81,7 +81,7 @@ operator = 1
 operator = 1
 
 [sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_7sn33"]
-parameter_name = "FresnelPower2"
+parameter_name = "FresnelPower"
 default_value_enabled = true
 default_value = 3.0
 
@@ -168,7 +168,7 @@ source = 5
 texture = SubResource("CompressedTexture2D_wes1b")
 
 [sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_ppt7b"]
-parameter_name = "GradientTexture_required2"
+parameter_name = "GradientTexture_required"
 texture_filter = 2
 texture_repeat = 2
 
@@ -179,31 +179,31 @@ function = 2
 code = "shader_type spatial;
 render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
 
-uniform sampler2D Texture_Between2 : source_color, repeat_disable;
-uniform vec4 Source_Between2 : source_color = vec4(1.000000, 1.000000, 1.000000, 1.000000);
+uniform sampler2D Texture_Between : source_color, repeat_disable;
+uniform vec4 Source_Between : source_color = vec4(1.000000, 1.000000, 1.000000, 1.000000);
 uniform float Light_Direction_X : hint_range(0.0, 1.0) = 0.5;
 uniform float Light_Direction_Y : hint_range(0.0, 1.0);
 uniform float Light_Direction_Z;
 uniform float Transfer = 1.0;
 uniform float Hybrid_Lighting_Mix : hint_range(0.0, 1.0) = 0.5;
-uniform sampler2D GradientTexture_required2 : filter_linear, repeat_disable;
-uniform sampler2D Texture_Lit2 : source_color, repeat_disable;
-uniform vec4 Source_Lit2 : source_color = vec4(1.000000, 1.000000, 1.000000, 1.000000);
-uniform sampler2D Texture_Shaded2 : source_color, repeat_disable;
-uniform vec4 Source_Shaded2 : source_color = vec4(1.000000, 1.000000, 1.000000, 1.000000);
-uniform float FresnelPower2 = 3.0;
-uniform vec4 RimLightColor2 : source_color = vec4(0.000000, 0.517647, 0.623529, 1.000000);
+uniform sampler2D GradientTexture_required : filter_linear, repeat_disable;
+uniform sampler2D Texture_Lit : source_color, repeat_disable;
+uniform vec4 Source_Lit : source_color = vec4(1.000000, 1.000000, 1.000000, 1.000000);
+uniform sampler2D Texture_Shaded : source_color, repeat_disable;
+uniform vec4 Source_Shaded : source_color = vec4(1.000000, 1.000000, 1.000000, 1.000000);
+uniform float FresnelPower = 3.0;
+uniform vec4 RimLightColor : source_color = vec4(0.000000, 0.517647, 0.623529, 1.000000);
 
 
 
 void light() {
 	vec4 n_out13p0;
 // Texture2D:13
-	n_out13p0 = texture(Texture_Between2, UV);
+	n_out13p0 = texture(Texture_Between, UV);
 
 
 // ColorParameter:11
-	vec4 n_out11p0 = Source_Between2;
+	vec4 n_out11p0 = Source_Between;
 
 
 // VectorOp:14
@@ -291,7 +291,7 @@ void light() {
 
 	vec4 n_out7p0;
 // Texture2D:7
-	n_out7p0 = texture(GradientTexture_required2, vec2(n_out49p0));
+	n_out7p0 = texture(GradientTexture_required, vec2(n_out49p0));
 	float n_out7p1 = n_out7p0.r;
 	float n_out7p2 = n_out7p0.g;
 	float n_out7p3 = n_out7p0.b;
@@ -303,11 +303,11 @@ void light() {
 
 	vec4 n_out15p0;
 // Texture2D:15
-	n_out15p0 = texture(Texture_Lit2, UV);
+	n_out15p0 = texture(Texture_Lit, UV);
 
 
 // ColorParameter:17
-	vec4 n_out17p0 = Source_Lit2;
+	vec4 n_out17p0 = Source_Lit;
 
 
 // VectorOp:18
@@ -324,11 +324,11 @@ void light() {
 
 	vec4 n_out16p0;
 // Texture2D:16
-	n_out16p0 = texture(Texture_Shaded2, UV);
+	n_out16p0 = texture(Texture_Shaded, UV);
 
 
 // ColorParameter:21
-	vec4 n_out21p0 = Source_Shaded2;
+	vec4 n_out21p0 = Source_Shaded;
 
 
 // VectorOp:22
@@ -344,7 +344,7 @@ void light() {
 
 
 // FloatParameter:31
-	float n_out31p0 = FresnelPower2;
+	float n_out31p0 = FresnelPower;
 
 
 // Fresnel:34
@@ -353,12 +353,12 @@ void light() {
 
 	vec4 n_out35p0;
 // Texture2D:35
-	n_out35p0 = texture(GradientTexture_required2, vec2(n_out34p0));
+	n_out35p0 = texture(GradientTexture_required, vec2(n_out34p0));
 	float n_out35p4 = n_out35p0.a;
 
 
 // ColorParameter:29
-	vec4 n_out29p0 = RimLightColor2;
+	vec4 n_out29p0 = RimLightColor;
 
 
 // VectorOp:33
@@ -400,7 +400,7 @@ void light() {
 
 }
 "
-graph_offset = Vector2(-2931.17, 41.5717)
+graph_offset = Vector2(-2045.27, -1371.14)
 nodes/fragment/0/position = Vector2(960, 340)
 nodes/light/0/position = Vector2(520, 540)
 nodes/light/2/node = SubResource("VisualShaderNodeInput_dmd0d")
