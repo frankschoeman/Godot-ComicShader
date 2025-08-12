@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bfqsvk4k5rqic"]
 
 [ext_resource type="Material" uid="uid://b3apwaft8hldq" path="res://mOutlineMaterial.tres" id="1_g8mlv"]
-[ext_resource type="Shader" uid="uid://dh22vh8mie7np" path="res://comicShader_v02.tres" id="2_g8mlv"]
+[ext_resource type="Shader" uid="uid://dh22vh8mie7np" path="res://comicShader_Simple.tres" id="2_g8mlv"]
 
 [resource]
 render_priority = 0

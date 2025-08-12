@@ -85,7 +85,7 @@ shadow_mesh = SubResource("ArrayMesh_5xs48")
 transform = Transform3D(0.415931, -0.265842, 0.869672, 0.114699, 0.964017, 0.239825, -0.902134, 0, 0.431456, -2.36843, 0, -0.252357)
 
 [node name="Suzanne" parent="monke" index="0"]
-transform = Transform3D(-0.192816, 0.890137, -0.412893, -0.178834, 0.381862, 0.906752, 0.964803, 0.248676, 0.0855585, 0.345547, -0.781737, 0.0165429)
+transform = Transform3D(0.574898, 0.523131, -0.289741, -0.153908, 0.51781, 0.629529, 0.577866, -0.382531, 0.455922, -0.30982, -0.230321, -1.44717)
 material_override = ExtResource("5_p3r26")
 
 [node name="Text" parent="monke" index="1"]
@@ -93,7 +93,7 @@ transform = Transform3D(0.147075, -45.7876, -0.239437, 0.394748, 13.3066, -0.875
 material_override = ExtResource("1_5wblg")
 
 [node name="Suzanne4" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.911411, 0.318786, 0.260214, -0.379772, 0.895105, 0.233582, -0.158454, -0.311711, 0.936873, 1.97073, 1.82258, -0.556948)
+transform = Transform3D(0.756043, 0.264443, 0.215856, -0.315033, 0.742517, 0.193763, -0.131442, -0.258574, 0.777165, 1.94248, 1.49622, -0.597248)
 material_override = ExtResource("1_kelfb")
 mesh = SubResource("ArrayMesh_i880b")
 skeleton = NodePath("")
@@ -106,19 +106,19 @@ shadow_enabled = true
 shadow_blur = 2.587
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="."]
-transform = Transform3D(-1.38681, -9.98972e-07, -0.531237, -1.2815e-06, 1.48508, 1.49012e-07, 0.531238, -1.91784e-07, -1.38681, -7.5579, 1.22377, -1.09374)
+transform = Transform3D(-1.37054, -5.91025e-07, 0.571904, -1.2815e-06, 1.48508, 1.49012e-07, -0.571903, -8.27898e-07, -1.37054, -7.5579, 0.214117, -1.09374)
 material_override = ExtResource("8_ef77n")
 radial_segments = 24
 rings = 24
 
 [node name="CSGSphere3D3" type="CSGSphere3D" parent="."]
-transform = Transform3D(-1.38681, -9.98972e-07, -0.531237, -1.2815e-06, 1.48508, 1.49012e-07, 0.531238, -1.91784e-07, -1.38681, -9.42075, 1.22377, -1.09374)
+transform = Transform3D(-1.47169, -7.8462e-07, 0.198927, -1.2815e-06, 1.48508, 1.49012e-07, -0.198927, -6.47378e-07, -1.47169, -7.57014, 1.76611, -1.09374)
 material_override = ExtResource("5_nnq3s")
 radial_segments = 24
 rings = 24
 
 [node name="CSGSphere3D2" type="CSGSphere3D" parent="."]
-transform = Transform3D(1.48508, 8.34465e-07, 4.17233e-07, -1.2815e-06, 1.48508, 1.3411e-07, -1.60933e-06, 5.36442e-07, 1.48508, -7.57443, 3.11073, -1.22031)
+transform = Transform3D(1.48508, 8.34465e-07, 4.17233e-07, -1.2815e-06, 1.48508, 1.3411e-07, -1.60933e-06, 5.36442e-07, 1.48508, -7.53133, 3.3055, -1.08096)
 material_override = ExtResource("6_nnq3s")
 radial_segments = 24
 rings = 24
@@ -129,13 +129,13 @@ fov = 26.8
 size = 9.108
 
 [node name="Suzanne2" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.903178, -0.419532, 0.0909063, 0.240539, 0.670012, 0.702303, -0.355546, -0.612437, 0.706052, -4.27441, -0.816164, -0.510531)
+transform = Transform3D(0.641387, 0.51828, -0.090179, -0.213539, 0.386455, 0.702265, 0.480777, -0.51977, 0.432221, -1.60828, -0.692697, -1.08308)
 material_override = ExtResource("1_5wblg")
 mesh = SubResource("ArrayMesh_c8hvc")
 skeleton = NodePath("")
 
 [node name="Suzanne3" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.978408, -0.185671, -0.0907952, 0.19927, 0.964017, 0.175965, 0.0548579, -0.190258, 0.9802, -7.43493, -0.549176, -0.556947)
+transform = Transform3D(0.796535, -0.129608, -0.191975, 0.20369, 0.719286, 0.359529, 0.110288, -0.392367, 0.7225, -6.17031, -0.774178, -0.89584)
 material_override = ExtResource("4_fgqed")
 mesh = SubResource("ArrayMesh_c8hvc")
 skeleton = NodePath("")
@@ -151,11 +151,9 @@ material_override = ExtResource("12_bmpjn")
 cast_shadow = 0
 metadata/_edit_lock_ = true
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1904, 1.72241, -1.08749)
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.817536, 0.491083, 0.300786, 0.0201359, -0.497614, 0.867165, 0.575525, 0.714995, 0.396929, 0, 2.75134, 0)
 shadow_enabled = true
-shadow_normal_bias = 10.0
-omni_range = 4096.0
-omni_shadow_mode = 0
+shadow_blur = 2.0
 
 [editable path="monke"]

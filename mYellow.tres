@@ -1,12 +1,15 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bnox6xdmrgmky"]
 
 [ext_resource type="Material" uid="uid://b3apwaft8hldq" path="res://mOutlineMaterial.tres" id="1_jexdi"]
-[ext_resource type="Shader" uid="uid://dh22vh8mie7np" path="res://comicShader_v02.tres" id="2_jexdi"]
+[ext_resource type="Shader" uid="uid://dh22vh8mie7np" path="res://comicShader_Simple.tres" id="2_jexdi"]
 
 [resource]
 render_priority = 0
 next_pass = ExtResource("1_jexdi")
 shader = ExtResource("2_jexdi")
+shader_parameter/Light_Direction_X = 0.0
+shader_parameter/Light_Direction_Y = 0.0
+shader_parameter/Light_Direction_Z = 0.0
 shader_parameter/Between_Transfer = 0.205
 shader_parameter/Between_Size = 0.433
 shader_parameter/Source_Between = Color(1, 0.9, 0, 1)

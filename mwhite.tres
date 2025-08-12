@@ -1,16 +1,19 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bnrriultjisrp"]
 
 [ext_resource type="Material" uid="uid://b3apwaft8hldq" path="res://mOutlineMaterial.tres" id="1_2hhwq"]
-[ext_resource type="Shader" uid="uid://dh22vh8mie7np" path="res://comicShader_v02.tres" id="2_2hhwq"]
+[ext_resource type="Shader" uid="uid://dh22vh8mie7np" path="res://comicShader_Simple.tres" id="2_2hhwq"]
 
 [resource]
 render_priority = 0
 next_pass = ExtResource("1_2hhwq")
 shader = ExtResource("2_2hhwq")
+shader_parameter/Light_Direction_X = 0.0
+shader_parameter/Light_Direction_Y = 0.0
+shader_parameter/Light_Direction_Z = 0.0
 shader_parameter/Between_Transfer = 0.0
 shader_parameter/Between_Size = 0.2
 shader_parameter/Source_Between = Color(1, 0.946, 0.73, 1)
 shader_parameter/Source_Lit = Color(1, 1, 1, 1)
 shader_parameter/Source_Shaded = Color(0.69, 0.839833, 1, 1)
-shader_parameter/FresnelPower = 3.0
-shader_parameter/RimLightColor = Color(0, 0.29, 0.0241666, 1)
+shader_parameter/FresnelPower = 2.93
+shader_parameter/RimLightColor = Color(0, 1, 0.0833333, 1)

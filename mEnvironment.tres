@@ -5,5 +5,5 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_22apb")
-shader_parameter/color = Color(0.36637, 0.456361, 0.767968, 1)
+shader_parameter/color = Color(0.161961, 0.36208, 0.538196, 1)
 shader_parameter/size = 1.0

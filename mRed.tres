@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bktir2x3wiawn"]
 
 [ext_resource type="Material" uid="uid://b3apwaft8hldq" path="res://mOutlineMaterial.tres" id="1_h16h7"]
-[ext_resource type="Shader" uid="uid://dh22vh8mie7np" path="res://comicShader_v02.tres" id="2_h16h7"]
+[ext_resource type="Shader" uid="uid://dh22vh8mie7np" path="res://comicShader_Simple.tres" id="2_h16h7"]
 
 [resource]
 render_priority = 0
@@ -9,8 +9,9 @@ next_pass = ExtResource("1_h16h7")
 shader = ExtResource("2_h16h7")
 shader_parameter/Light_Direction_X = 0.0
 shader_parameter/Light_Direction_Y = 0.0
+shader_parameter/Light_Direction_Z = 0.0
 shader_parameter/Between_Transfer = 0.0
-shader_parameter/Between_Size = 0.251
+shader_parameter/Between_Size = 0.235
 shader_parameter/Source_Between = Color(0.692482, 0, 0, 1)
 shader_parameter/Source_Lit = Color(0.905269, 3.34509e-06, 1.15514e-06, 1)
 shader_parameter/Source_Shaded = Color(0, 0, 0, 1)
