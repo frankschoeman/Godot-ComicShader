@@ -1,0 +1,34 @@
+[gd_resource type="ShaderMaterial" load_steps=9 format=3 uid="uid://bs2msprikudrt"]
+
+[ext_resource type="Material" uid="uid://b3apwaft8hldq" path="res://mOutlineMaterial.tres" id="1_12f82"]
+[ext_resource type="Shader" uid="uid://b8phtx0dk3jdb" path="res://comicShader_TGHalftone.tres" id="2_12f82"]
+[ext_resource type="Texture2D" uid="uid://bpu5cwaqbuett" path="res://GradientRGB2.tga" id="3_s3rws"]
+[ext_resource type="Texture2D" uid="uid://bc45nkw00jaik" path="res://GradientRGB_HalftoneMask.tga" id="4_lnk8w"]
+[ext_resource type="Texture2D" uid="uid://doucyoj3c1hho" path="res://HalfToneCheckerboard.png" id="5_wmc44"]
+[ext_resource type="Texture2D" uid="uid://blu1fmypme6te" path="res://WORLD-between.png" id="6_xtbsd"]
+[ext_resource type="Texture2D" uid="uid://crkny1hoerat0" path="res://WORLD-lit.png" id="7_kefsg"]
+[ext_resource type="Texture2D" uid="uid://b1j26otnipcht" path="res://WORLD-shaded.png" id="8_2sjnh"]
+
+[resource]
+render_priority = 0
+next_pass = ExtResource("1_12f82")
+shader = ExtResource("2_12f82")
+shader_parameter/Enable_Half_Tone_Mask = true
+shader_parameter/Texture_Between = ExtResource("6_xtbsd")
+shader_parameter/Source_Between = Color(1, 1, 1, 1)
+shader_parameter/Texture_Shaded = ExtResource("8_2sjnh")
+shader_parameter/Source_Shaded = Color(1, 1, 1, 1)
+shader_parameter/Half_Tone_Tiling_Multiplier2 = -2.0
+shader_parameter/Half_Tone_UV_mix = 1.0
+shader_parameter/Half_Tone_Tiling_Multiplier = 0.8
+shader_parameter/Half_Tone_Texture = ExtResource("5_wmc44")
+shader_parameter/Light_Direction_X = 0.0
+shader_parameter/Light_Direction_Y = 0.0
+shader_parameter/Light_Direction_Z = -0.205
+shader_parameter/Transfer = 1.325
+shader_parameter/Half_Tone_Mask = ExtResource("4_lnk8w")
+shader_parameter/Texture_Lit = ExtResource("7_kefsg")
+shader_parameter/Source_Lit = Color(1, 1, 1, 1)
+shader_parameter/GradientTexture_required = ExtResource("3_s3rws")
+shader_parameter/FresnelPower = 7.405
+shader_parameter/RimLightColor = Color(0.495413, 0.886288, 1, 1)
