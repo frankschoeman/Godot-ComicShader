@@ -145,13 +145,13 @@ default_input_values = [0, 0.0, 1, 0.5]
 operator = 1
 
 [sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_lvjx8"]
-input_name = "normal"
+input_name = "attenuation"
 
 [sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_5qd4w"]
 parameter_name = "Hybrid_Lighting_Mix"
 hint = 1
 default_value_enabled = true
-default_value = 0.5
+default_value = 0.75
 
 [sub_resource type="VisualShaderNodeMix" id="VisualShaderNodeMix_xrwh5"]
 default_input_values = [0, Vector3(0, 0, 0), 1, Vector3(1, 1, 1), 2, Vector3(0.5, 0.5, 0.5)]
@@ -185,7 +185,7 @@ uniform float Light_Direction_X : hint_range(0.0, 1.0) = 0.5;
 uniform float Light_Direction_Y : hint_range(0.0, 1.0);
 uniform float Light_Direction_Z;
 uniform float Transfer = 1.0;
-uniform float Hybrid_Lighting_Mix : hint_range(0.0, 1.0) = 0.5;
+uniform float Hybrid_Lighting_Mix : hint_range(0.0, 1.0) = 0.75;
 uniform sampler2D GradientTexture_required : filter_linear, repeat_disable;
 uniform sampler2D Texture_Lit : source_color, repeat_disable;
 uniform vec4 Source_Lit : source_color = vec4(1.000000, 1.000000, 1.000000, 1.000000);
@@ -215,7 +215,7 @@ void light() {
 
 
 // Input:50
-	vec3 n_out50p0 = NORMAL;
+	float n_out50p0 = ATTENUATION;
 
 
 // Input:6
@@ -282,7 +282,7 @@ void light() {
 
 
 // Mix:52
-	vec3 n_out52p0 = mix(n_out50p0, n_out3p0, vec3(n_out51p0));
+	vec3 n_out52p0 = mix(vec3(n_out50p0), n_out3p0, vec3(n_out51p0));
 
 
 // DotProduct:49
@@ -400,7 +400,7 @@ void light() {
 
 }
 "
-graph_offset = Vector2(-2045.27, -1371.14)
+graph_offset = Vector2(-1819.78, 85.6658)
 nodes/fragment/0/position = Vector2(960, 340)
 nodes/light/0/position = Vector2(520, 540)
 nodes/light/2/node = SubResource("VisualShaderNodeInput_dmd0d")
@@ -414,11 +414,11 @@ nodes/light/5/position = Vector2(-2860, 1100)
 nodes/light/6/node = SubResource("VisualShaderNodeInput_w5ul5")
 nodes/light/6/position = Vector2(-3960, 660)
 nodes/light/7/node = SubResource("VisualShaderNodeTexture_4fucv")
-nodes/light/7/position = Vector2(-1360, 540)
+nodes/light/7/position = Vector2(-1300, 540)
 nodes/light/8/node = SubResource("VisualShaderNodeTexture2DParameter_ppt7b")
 nodes/light/8/position = Vector2(-1720, 800)
 nodes/light/9/node = SubResource("VisualShaderNodeVectorFunc_y3y3w")
-nodes/light/9/position = Vector2(-1800, 1180)
+nodes/light/9/position = Vector2(-1720, 1180)
 nodes/light/10/node = SubResource("VisualShaderNodeVectorOp_lvjx8")
 nodes/light/10/position = Vector2(140, 620)
 nodes/light/11/node = SubResource("VisualShaderNodeColorParameter_5qd4w")
@@ -492,13 +492,13 @@ nodes/light/44/position = Vector2(-3280, 1280)
 nodes/light/45/node = SubResource("VisualShaderNodeClamp_lvjx8")
 nodes/light/45/position = Vector2(-1080, 1100)
 nodes/light/46/node = SubResource("VisualShaderNodeFloatOp_5qd4w")
-nodes/light/46/position = Vector2(-1540, 1180)
+nodes/light/46/position = Vector2(-1480, 1180)
 nodes/light/49/node = SubResource("VisualShaderNodeDotProduct_xrwh5")
 nodes/light/49/position = Vector2(-2000, 720)
 nodes/light/50/node = SubResource("VisualShaderNodeInput_lvjx8")
 nodes/light/50/position = Vector2(-2600, 1040)
 nodes/light/51/node = SubResource("VisualShaderNodeFloatParameter_5qd4w")
-nodes/light/51/position = Vector2(-2620, 1200)
+nodes/light/51/position = Vector2(-2600, 1240)
 nodes/light/52/node = SubResource("VisualShaderNodeMix_xrwh5")
 nodes/light/52/position = Vector2(-2240, 880)
-nodes/light/connections = PackedInt32Array(4, 0, 3, 0, 8, 0, 7, 2, 5, 0, 3, 1, 12, 0, 13, 2, 13, 0, 14, 0, 11, 0, 14, 1, 19, 0, 15, 2, 15, 0, 18, 0, 20, 0, 16, 2, 16, 0, 22, 0, 17, 0, 18, 1, 21, 0, 22, 1, 14, 0, 24, 0, 18, 0, 25, 0, 7, 1, 25, 1, 7, 2, 24, 1, 22, 0, 23, 0, 7, 3, 23, 1, 26, 0, 5, 1, 24, 0, 27, 0, 25, 0, 27, 1, 27, 0, 28, 0, 23, 0, 28, 1, 28, 0, 10, 0, 31, 0, 34, 3, 29, 0, 33, 1, 30, 0, 32, 0, 35, 4, 33, 0, 8, 0, 35, 2, 37, 0, 38, 2, 6, 1, 38, 0, 36, 0, 38, 1, 38, 0, 4, 0, 39, 0, 40, 2, 41, 0, 40, 1, 6, 1, 36, 0, 6, 2, 41, 0, 6, 2, 40, 0, 40, 0, 4, 1, 42, 0, 44, 2, 43, 0, 44, 1, 6, 3, 43, 0, 6, 3, 44, 0, 44, 0, 5, 0, 34, 0, 35, 0, 32, 0, 10, 1, 33, 0, 30, 0, 9, 0, 46, 0, 46, 0, 45, 0, 45, 0, 30, 1, 2, 0, 49, 0, 49, 0, 9, 0, 49, 0, 7, 0, 51, 0, 52, 2, 52, 0, 49, 1, 50, 0, 52, 0, 3, 0, 52, 1, 10, 0, 0, 0)
+nodes/light/connections = PackedInt32Array(4, 0, 3, 0, 8, 0, 7, 2, 5, 0, 3, 1, 12, 0, 13, 2, 13, 0, 14, 0, 11, 0, 14, 1, 19, 0, 15, 2, 15, 0, 18, 0, 20, 0, 16, 2, 16, 0, 22, 0, 17, 0, 18, 1, 21, 0, 22, 1, 14, 0, 24, 0, 18, 0, 25, 0, 7, 1, 25, 1, 22, 0, 23, 0, 7, 3, 23, 1, 26, 0, 5, 1, 24, 0, 27, 0, 25, 0, 27, 1, 27, 0, 28, 0, 23, 0, 28, 1, 28, 0, 10, 0, 31, 0, 34, 3, 29, 0, 33, 1, 30, 0, 32, 0, 35, 4, 33, 0, 8, 0, 35, 2, 37, 0, 38, 2, 6, 1, 38, 0, 36, 0, 38, 1, 38, 0, 4, 0, 39, 0, 40, 2, 41, 0, 40, 1, 6, 1, 36, 0, 6, 2, 41, 0, 6, 2, 40, 0, 40, 0, 4, 1, 42, 0, 44, 2, 43, 0, 44, 1, 6, 3, 43, 0, 6, 3, 44, 0, 44, 0, 5, 0, 34, 0, 35, 0, 32, 0, 10, 1, 33, 0, 30, 0, 9, 0, 46, 0, 46, 0, 45, 0, 45, 0, 30, 1, 2, 0, 49, 0, 51, 0, 52, 2, 3, 0, 52, 1, 52, 0, 49, 1, 50, 0, 52, 0, 7, 2, 24, 1, 10, 0, 0, 0, 49, 0, 9, 0, 49, 0, 7, 0)
