@@ -39,7 +39,6 @@ operator = 2
 
 [sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_l5vv6"]
 parameter_name = "Light_Direction_Y"
-hint = 1
 
 [sub_resource type="VisualShaderNodeMix" id="VisualShaderNodeMix_d7v8i"]
 
@@ -60,7 +59,6 @@ input_name = "normal"
 
 [sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_j8cir"]
 parameter_name = "Light_Direction_X"
-hint = 1
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wes1b"]
 
@@ -76,6 +74,7 @@ function = 2
 
 [sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_d7v8i"]
 parameter_name = "Light_Direction_Z"
+default_value_enabled = true
 
 [sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_wes1b"]
 constant = -0.01
@@ -103,9 +102,9 @@ texture_repeat = 2
 code = "shader_type spatial;
 render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
 
-uniform float Light_Direction_X : hint_range(0.0, 1.0);
-uniform float Light_Direction_Y : hint_range(0.0, 1.0);
-uniform float Light_Direction_Z;
+uniform float Light_Direction_X;
+uniform float Light_Direction_Y;
+uniform float Light_Direction_Z = 0.0;
 uniform float Transfer = 1.0;
 uniform sampler2D Source_Gradient : source_color, filter_linear, repeat_disable;
 uniform float FresnelPower = 3.0;
@@ -229,7 +228,7 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-1468.41, -149.108)
+graph_offset = Vector2(-2695.09, -228.091)
 nodes/fragment/0/position = Vector2(400, 580)
 nodes/fragment/3/node = SubResource("VisualShaderNodeVectorOp_blxwq")
 nodes/fragment/3/position = Vector2(-1060, 460)

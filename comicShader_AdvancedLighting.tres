@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" load_steps=51 format=3 uid="uid://cbj5lflxb3moq"]
+[gd_resource type="VisualShader" load_steps=50 format=3 uid="uid://cbj5lflxb3moq"]
 
 [sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_lvjx8"]
 
@@ -126,13 +126,12 @@ function = 2
 
 [sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_vhuuk"]
 parameter_name = "Light_Direction_Z"
+default_value_enabled = true
 
 [sub_resource type="VisualShaderNodeVectorFunc" id="VisualShaderNodeVectorFunc_13am5"]
 function = 2
 
 [sub_resource type="VisualShaderNodeMix" id="VisualShaderNodeMix_he6lf"]
-
-[sub_resource type="VisualShaderNodeClamp" id="VisualShaderNodeClamp_lvjx8"]
 
 [sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_5qd4w"]
 default_input_values = [0, 0.0, 1, 2.0]
@@ -144,9 +143,6 @@ operator = 5
 default_input_values = [0, 0.0, 1, 0.5]
 operator = 1
 
-[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_lvjx8"]
-input_name = "attenuation"
-
 [sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_5qd4w"]
 parameter_name = "Hybrid_Lighting_Mix"
 hint = 1
@@ -156,6 +152,9 @@ default_value = 0.75
 [sub_resource type="VisualShaderNodeMix" id="VisualShaderNodeMix_xrwh5"]
 default_input_values = [0, Vector3(0, 0, 0), 1, Vector3(1, 1, 1), 2, Vector3(0.5, 0.5, 0.5)]
 op_type = 3
+
+[sub_resource type="VisualShaderNodeIntConstant" id="VisualShaderNodeIntConstant_lvjx8"]
+constant = 1
 
 [sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_w5ul5"]
 output_port_for_preview = 0
@@ -179,16 +178,16 @@ function = 2
 code = "shader_type spatial;
 render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
 
-uniform sampler2D Texture_Between : source_color, repeat_disable;
-uniform vec4 Source_Between : source_color = vec4(1.000000, 1.000000, 1.000000, 1.000000);
+uniform sampler2D Texture_Lit : source_color, repeat_disable;
+uniform vec4 Source_Lit : source_color = vec4(1.000000, 1.000000, 1.000000, 1.000000);
 uniform float Light_Direction_X : hint_range(0.0, 1.0) = 0.5;
 uniform float Light_Direction_Y : hint_range(0.0, 1.0);
-uniform float Light_Direction_Z;
+uniform float Light_Direction_Z = 0.0;
 uniform float Transfer = 1.0;
 uniform float Hybrid_Lighting_Mix : hint_range(0.0, 1.0) = 0.75;
 uniform sampler2D GradientTexture_required : filter_linear, repeat_disable;
-uniform sampler2D Texture_Lit : source_color, repeat_disable;
-uniform vec4 Source_Lit : source_color = vec4(1.000000, 1.000000, 1.000000, 1.000000);
+uniform sampler2D Texture_Between : source_color, repeat_disable;
+uniform vec4 Source_Between : source_color = vec4(1.000000, 1.000000, 1.000000, 1.000000);
 uniform sampler2D Texture_Shaded : source_color, repeat_disable;
 uniform vec4 Source_Shaded : source_color = vec4(1.000000, 1.000000, 1.000000, 1.000000);
 uniform float FresnelPower = 3.0;
@@ -197,25 +196,25 @@ uniform vec4 RimLightColor : source_color = vec4(0.000000, 0.517647, 0.623529, 1
 
 
 void light() {
-	vec4 n_out13p0;
-// Texture2D:13
-	n_out13p0 = texture(Texture_Between, UV);
+	vec4 n_out15p0;
+// Texture2D:15
+	n_out15p0 = texture(Texture_Lit, UV);
 
 
-// ColorParameter:11
-	vec4 n_out11p0 = Source_Between;
+// ColorParameter:17
+	vec4 n_out17p0 = Source_Lit;
 
 
-// VectorOp:14
-	vec3 n_out14p0 = vec3(n_out13p0.xyz) * vec3(n_out11p0.xyz);
+// VectorOp:18
+	vec3 n_out18p0 = vec3(n_out15p0.xyz) * vec3(n_out17p0.xyz);
 
 
 // Input:2
 	float n_out2p0 = ATTENUATION;
 
 
-// Input:50
-	float n_out50p0 = ATTENUATION;
+// IntConstant:53
+	int n_out53p0 = 1;
 
 
 // Input:6
@@ -282,7 +281,7 @@ void light() {
 
 
 // Mix:52
-	vec3 n_out52p0 = mix(vec3(n_out50p0), n_out3p0, vec3(n_out51p0));
+	vec3 n_out52p0 = mix(vec3(float(n_out53p0)), n_out3p0, vec3(n_out51p0));
 
 
 // DotProduct:49
@@ -297,29 +296,29 @@ void light() {
 	float n_out7p3 = n_out7p0.b;
 
 
-// VectorOp:24
-	vec3 n_out24p0 = n_out14p0 * vec3(n_out7p2);
-
-
-	vec4 n_out15p0;
-// Texture2D:15
-	n_out15p0 = texture(Texture_Lit, UV);
-
-
-// ColorParameter:17
-	vec4 n_out17p0 = Source_Lit;
-
-
-// VectorOp:18
-	vec3 n_out18p0 = vec3(n_out15p0.xyz) * vec3(n_out17p0.xyz);
-
-
 // VectorOp:25
 	vec3 n_out25p0 = n_out18p0 * vec3(n_out7p1);
 
 
+	vec4 n_out13p0;
+// Texture2D:13
+	n_out13p0 = texture(Texture_Between, UV);
+
+
+// ColorParameter:11
+	vec4 n_out11p0 = Source_Between;
+
+
+// VectorOp:14
+	vec3 n_out14p0 = vec3(n_out13p0.xyz) * vec3(n_out11p0.xyz);
+
+
+// VectorOp:24
+	vec3 n_out24p0 = n_out14p0 * vec3(n_out7p2);
+
+
 // VectorOp:27
-	vec3 n_out27p0 = n_out24p0 + n_out25p0;
+	vec3 n_out27p0 = n_out25p0 + n_out24p0;
 
 
 	vec4 n_out16p0;
@@ -374,14 +373,8 @@ void light() {
 	float n_out46p0 = pow(n_out9p0.x, n_in46p1);
 
 
-// Clamp:45
-	float n_in45p1 = 0.00000;
-	float n_in45p2 = 1.00000;
-	float n_out45p0 = clamp(n_out46p0, n_in45p1, n_in45p2);
-
-
 // VectorOp:30
-	vec3 n_out30p0 = n_out33p0 - vec3(n_out45p0);
+	vec3 n_out30p0 = n_out33p0 - vec3(n_out46p0);
 
 
 // Clamp:32
@@ -400,7 +393,7 @@ void light() {
 
 }
 "
-graph_offset = Vector2(-1819.78, 85.6658)
+graph_offset = Vector2(-2558.34, 23.73)
 nodes/fragment/0/position = Vector2(960, 340)
 nodes/light/0/position = Vector2(520, 540)
 nodes/light/2/node = SubResource("VisualShaderNodeInput_dmd0d")
@@ -422,23 +415,23 @@ nodes/light/9/position = Vector2(-1720, 1180)
 nodes/light/10/node = SubResource("VisualShaderNodeVectorOp_lvjx8")
 nodes/light/10/position = Vector2(140, 620)
 nodes/light/11/node = SubResource("VisualShaderNodeColorParameter_5qd4w")
-nodes/light/11/position = Vector2(-1960, -920)
+nodes/light/11/position = Vector2(-2180, -440)
 nodes/light/12/node = SubResource("VisualShaderNodeTexture2DParameter_xrwh5")
-nodes/light/12/position = Vector2(-1960, -1320)
+nodes/light/12/position = Vector2(-2180, -840)
 nodes/light/13/node = SubResource("VisualShaderNodeTexture_1ou4d")
-nodes/light/13/position = Vector2(-1600, -1060)
+nodes/light/13/position = Vector2(-1820, -580)
 nodes/light/14/node = SubResource("VisualShaderNodeVectorOp_u5nvv")
-nodes/light/14/position = Vector2(-1360, -860)
+nodes/light/14/position = Vector2(-1580, -380)
 nodes/light/15/node = SubResource("VisualShaderNodeTexture_86uv2")
-nodes/light/15/position = Vector2(-1600, -420)
+nodes/light/15/position = Vector2(-1560, -1060)
 nodes/light/16/node = SubResource("VisualShaderNodeTexture_eayk4")
 nodes/light/16/position = Vector2(-1580, 100)
 nodes/light/17/node = SubResource("VisualShaderNodeColorParameter_2wwta")
-nodes/light/17/position = Vector2(-2240, -460)
+nodes/light/17/position = Vector2(-1840, -880)
 nodes/light/18/node = SubResource("VisualShaderNodeVectorOp_mwu7k")
-nodes/light/18/position = Vector2(-1360, -220)
+nodes/light/18/position = Vector2(-1320, -860)
 nodes/light/19/node = SubResource("VisualShaderNodeTexture2DParameter_qmu6d")
-nodes/light/19/position = Vector2(-1960, -680)
+nodes/light/19/position = Vector2(-2040, -1280)
 nodes/light/20/node = SubResource("VisualShaderNodeTexture2DParameter_n2xvd")
 nodes/light/20/position = Vector2(-1940, -160)
 nodes/light/21/node = SubResource("VisualShaderNodeColorParameter_uwrhd")
@@ -448,9 +441,9 @@ nodes/light/22/position = Vector2(-1300, 260)
 nodes/light/23/node = SubResource("VisualShaderNodeVectorOp_ylgys")
 nodes/light/23/position = Vector2(-700, 340)
 nodes/light/24/node = SubResource("VisualShaderNodeVectorOp_v8evo")
-nodes/light/24/position = Vector2(-660, -280)
+nodes/light/24/position = Vector2(-700, 120)
 nodes/light/25/node = SubResource("VisualShaderNodeVectorOp_pdmta")
-nodes/light/25/position = Vector2(-680, 60)
+nodes/light/25/position = Vector2(-700, -100)
 nodes/light/26/node = SubResource("VisualShaderNodeFloatParameter_t7bdw")
 nodes/light/26/position = Vector2(-3120, 1440)
 nodes/light/27/node = SubResource("VisualShaderNodeVectorOp_jwt2i")
@@ -489,16 +482,14 @@ nodes/light/43/node = SubResource("VisualShaderNodeVectorFunc_13am5")
 nodes/light/43/position = Vector2(-3540, 1240)
 nodes/light/44/node = SubResource("VisualShaderNodeMix_he6lf")
 nodes/light/44/position = Vector2(-3280, 1280)
-nodes/light/45/node = SubResource("VisualShaderNodeClamp_lvjx8")
-nodes/light/45/position = Vector2(-1080, 1100)
 nodes/light/46/node = SubResource("VisualShaderNodeFloatOp_5qd4w")
 nodes/light/46/position = Vector2(-1480, 1180)
 nodes/light/49/node = SubResource("VisualShaderNodeDotProduct_xrwh5")
 nodes/light/49/position = Vector2(-2000, 720)
-nodes/light/50/node = SubResource("VisualShaderNodeInput_lvjx8")
-nodes/light/50/position = Vector2(-2600, 1040)
 nodes/light/51/node = SubResource("VisualShaderNodeFloatParameter_5qd4w")
-nodes/light/51/position = Vector2(-2600, 1240)
+nodes/light/51/position = Vector2(-2560, 1340)
 nodes/light/52/node = SubResource("VisualShaderNodeMix_xrwh5")
 nodes/light/52/position = Vector2(-2240, 880)
-nodes/light/connections = PackedInt32Array(4, 0, 3, 0, 8, 0, 7, 2, 5, 0, 3, 1, 12, 0, 13, 2, 13, 0, 14, 0, 11, 0, 14, 1, 19, 0, 15, 2, 15, 0, 18, 0, 20, 0, 16, 2, 16, 0, 22, 0, 17, 0, 18, 1, 21, 0, 22, 1, 14, 0, 24, 0, 18, 0, 25, 0, 7, 1, 25, 1, 22, 0, 23, 0, 7, 3, 23, 1, 26, 0, 5, 1, 24, 0, 27, 0, 25, 0, 27, 1, 27, 0, 28, 0, 23, 0, 28, 1, 28, 0, 10, 0, 31, 0, 34, 3, 29, 0, 33, 1, 30, 0, 32, 0, 35, 4, 33, 0, 8, 0, 35, 2, 37, 0, 38, 2, 6, 1, 38, 0, 36, 0, 38, 1, 38, 0, 4, 0, 39, 0, 40, 2, 41, 0, 40, 1, 6, 1, 36, 0, 6, 2, 41, 0, 6, 2, 40, 0, 40, 0, 4, 1, 42, 0, 44, 2, 43, 0, 44, 1, 6, 3, 43, 0, 6, 3, 44, 0, 44, 0, 5, 0, 34, 0, 35, 0, 32, 0, 10, 1, 33, 0, 30, 0, 9, 0, 46, 0, 46, 0, 45, 0, 45, 0, 30, 1, 2, 0, 49, 0, 51, 0, 52, 2, 3, 0, 52, 1, 52, 0, 49, 1, 50, 0, 52, 0, 7, 2, 24, 1, 10, 0, 0, 0, 49, 0, 9, 0, 49, 0, 7, 0)
+nodes/light/53/node = SubResource("VisualShaderNodeIntConstant_lvjx8")
+nodes/light/53/position = Vector2(-2540, 1140)
+nodes/light/connections = PackedInt32Array(4, 0, 3, 0, 8, 0, 7, 2, 5, 0, 3, 1, 12, 0, 13, 2, 13, 0, 14, 0, 11, 0, 14, 1, 19, 0, 15, 2, 15, 0, 18, 0, 20, 0, 16, 2, 16, 0, 22, 0, 17, 0, 18, 1, 21, 0, 22, 1, 14, 0, 24, 0, 18, 0, 25, 0, 7, 1, 25, 1, 22, 0, 23, 0, 7, 3, 23, 1, 26, 0, 5, 1, 27, 0, 28, 0, 23, 0, 28, 1, 28, 0, 10, 0, 31, 0, 34, 3, 29, 0, 33, 1, 30, 0, 32, 0, 35, 4, 33, 0, 8, 0, 35, 2, 37, 0, 38, 2, 6, 1, 38, 0, 36, 0, 38, 1, 38, 0, 4, 0, 39, 0, 40, 2, 41, 0, 40, 1, 6, 1, 36, 0, 6, 2, 41, 0, 6, 2, 40, 0, 40, 0, 4, 1, 42, 0, 44, 2, 43, 0, 44, 1, 6, 3, 43, 0, 6, 3, 44, 0, 44, 0, 5, 0, 34, 0, 35, 0, 32, 0, 10, 1, 33, 0, 30, 0, 9, 0, 46, 0, 2, 0, 49, 0, 51, 0, 52, 2, 3, 0, 52, 1, 52, 0, 49, 1, 7, 2, 24, 1, 10, 0, 0, 0, 49, 0, 9, 0, 49, 0, 7, 0, 24, 0, 27, 1, 25, 0, 27, 0, 46, 0, 30, 1, 53, 0, 52, 0)
