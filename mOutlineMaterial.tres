@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b3apwaft8hldq"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://b3apwaft8hldq"]
 
 [ext_resource type="Shader" uid="uid://c2b6f1flwbina" path="res://OutlinePass.gdshader" id="1_dxdt2"]
 
@@ -6,4 +6,4 @@
 render_priority = 0
 shader = ExtResource("1_dxdt2")
 shader_parameter/color = Color(0.288518, 0.288518, 0.288518, 1)
-shader_parameter/size = 1.02
+shader_parameter/size = 0.00999999977648

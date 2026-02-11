@@ -1,14 +1,16 @@
-[gd_scene load_steps=17 format=4 uid="uid://jus82nhlf4xl"]
+[gd_scene format=4 uid="uid://jus82nhlf4xl"]
 
 [ext_resource type="Material" uid="uid://bnox6xdmrgmky" path="res://mYellow.tres" id="1_5wblg"]
 [ext_resource type="Material" uid="uid://bfqsvk4k5rqic" path="res://mGreen.tres" id="1_kelfb"]
 [ext_resource type="PackedScene" uid="uid://wwvd2bvsfom1" path="res://amonke.glb" id="2_gcfgo"]
+[ext_resource type="Material" uid="uid://bux7jl38s0q0y" path="res://Experimental/mLINK_AdvLighting.tres" id="4_ef77n"]
 [ext_resource type="Material" uid="uid://bktir2x3wiawn" path="res://mRed.tres" id="4_fgqed"]
-[ext_resource type="Material" uid="uid://ddu1dvcsc8pge" path="res://mTexturedGradient.tres" id="5_nnq3s"]
 [ext_resource type="Material" uid="uid://bnrriultjisrp" path="res://mwhite.tres" id="5_p3r26"]
 [ext_resource type="Material" uid="uid://b42k0gdbtq7bb" path="res://mGradient.tres" id="6_nnq3s"]
 [ext_resource type="Material" uid="uid://dfsui67tsqkhl" path="res://new_standard_material_3d.tres" id="6_xpmf3"]
+[ext_resource type="Material" uid="uid://bs2msprikudrt" path="res://mTexturedGradient_HalfTone.tres" id="8_4ma82"]
 [ext_resource type="Material" uid="uid://b3an7argoyrp6" path="res://mAdvancedLighting.tres" id="8_ef77n"]
+[ext_resource type="ArrayMesh" uid="uid://cq3hoifujdlwf" path="res://Experimental/link.res" id="10_i82ug"]
 [ext_resource type="Material" uid="uid://clhiuhuxyhkg6" path="res://mEnvironment.tres" id="12_bmpjn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7sl22"]
@@ -79,9 +81,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_5xs48")
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D" type="Node3D" unique_id=216900827]
 
-[node name="monke" parent="." instance=ExtResource("2_gcfgo")]
+[node name="monke" parent="." unique_id=462653536 instance=ExtResource("2_gcfgo")]
 transform = Transform3D(0.415931, -0.265842, 0.869672, 0.114699, 0.964017, 0.239825, -0.902134, 0, 0.431456, -2.36843, 0, -0.252357)
 
 [node name="Suzanne" parent="monke" index="0"]
@@ -92,66 +94,76 @@ material_override = ExtResource("5_p3r26")
 transform = Transform3D(0.147075, -45.7876, -0.239437, 0.394748, 13.3066, -0.875435, 0.906942, 1.63345, 0.419863, 2.54239, -2.15755, 3.57328)
 material_override = ExtResource("1_5wblg")
 
-[node name="Suzanne4" type="MeshInstance3D" parent="."]
+[node name="Link" type="MeshInstance3D" parent="." unique_id=995098411]
+transform = Transform3D(52.5774, 9.06394e-08, -8.60234, 0, 53.2765, 0, 8.60234, -5.53987e-07, 52.5774, -6.34345, -1.46445, -4.81978)
+material_override = ExtResource("4_ef77n")
+mesh = ExtResource("10_i82ug")
+
+[node name="Link2" type="MeshInstance3D" parent="." unique_id=923189217]
+transform = Transform3D(-36.8716, 4.05196e-07, -38.4561, 0, 53.2765, 0, 38.4561, 3.88501e-07, -36.8716, -0.490111, -1.48692, -5.12325)
+material_override = ExtResource("4_ef77n")
+mesh = ExtResource("10_i82ug")
+
+[node name="Link3" type="MeshInstance3D" parent="." unique_id=1554898818]
+transform = Transform3D(21.7043, -5.12658e-07, 48.655, 0, 53.2765, 0, -48.655, -2.2869e-07, 21.7043, -3.72049, -1.47268, -4.88872)
+material_override = ExtResource("4_ef77n")
+mesh = ExtResource("10_i82ug")
+
+[node name="Suzanne4" type="MeshInstance3D" parent="." unique_id=966900257]
 transform = Transform3D(0.756043, 0.264443, 0.215856, -0.315033, 0.742517, 0.193763, -0.131442, -0.258574, 0.777165, 1.94248, 1.49622, -0.597248)
 material_override = ExtResource("1_kelfb")
 mesh = SubResource("ArrayMesh_i880b")
 skeleton = NodePath("")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.00982571, -0.877353, 0.479746, -0.486642, 0.414925, 0.768776, -0.873546, -0.241018, -0.42288, 0.6861, 0.490849, 3.33786e-06)
-visible = false
-light_bake_mode = 0
-shadow_enabled = true
-shadow_blur = 2.587
-
-[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=2004606710]
 transform = Transform3D(-1.37054, -5.91025e-07, 0.571904, -1.2815e-06, 1.48508, 1.49012e-07, -0.571903, -8.27898e-07, -1.37054, -7.5579, 0.214117, -1.09374)
 material_override = ExtResource("8_ef77n")
 radial_segments = 24
 rings = 24
 
-[node name="CSGSphere3D3" type="CSGSphere3D" parent="."]
+[node name="CSGSphere3D3" type="CSGSphere3D" parent="." unique_id=712711567]
 transform = Transform3D(-1.47169, -7.8462e-07, 0.198927, -1.2815e-06, 1.48508, 1.49012e-07, -0.198927, -6.47378e-07, -1.47169, -7.57014, 1.76611, -1.09374)
-material_override = ExtResource("5_nnq3s")
+material_override = ExtResource("8_4ma82")
 radial_segments = 24
 rings = 24
 
-[node name="CSGSphere3D2" type="CSGSphere3D" parent="."]
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="." unique_id=688315747]
 transform = Transform3D(1.48508, 8.34465e-07, 4.17233e-07, -1.2815e-06, 1.48508, 1.3411e-07, -1.60933e-06, 5.36442e-07, 1.48508, -7.53133, 3.3055, -1.08096)
 material_override = ExtResource("6_nnq3s")
 radial_segments = 24
 rings = 24
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=2138865674]
 transform = Transform3D(0.987568, -0.0217545, 0.155681, -3.27826e-07, 0.990377, 0.138395, -0.157193, -0.136675, 0.978065, -0.417287, 2.40971, 12.999)
 fov = 26.8
 size = 9.108
 
-[node name="Suzanne2" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.641387, 0.51828, -0.090179, -0.213539, 0.386455, 0.702265, 0.480777, -0.51977, 0.432221, -1.60828, -0.692697, -1.08308)
+[node name="Suzanne2" type="MeshInstance3D" parent="." unique_id=859609567]
+transform = Transform3D(0.64866, 0.505079, -0.110723, -0.226838, 0.437593, 0.667218, 0.464658, -0.491458, 0.480296, -1.60828, -0.692697, -1.08308)
 material_override = ExtResource("1_5wblg")
 mesh = SubResource("ArrayMesh_c8hvc")
 skeleton = NodePath("")
 
-[node name="Suzanne3" type="MeshInstance3D" parent="."]
+[node name="Suzanne3" type="MeshInstance3D" parent="." unique_id=240337508]
 transform = Transform3D(0.796535, -0.129608, -0.191975, 0.20369, 0.719286, 0.359529, 0.110288, -0.392367, 0.7225, -6.17031, -0.774178, -0.89584)
 material_override = ExtResource("4_fgqed")
 mesh = SubResource("ArrayMesh_c8hvc")
 skeleton = NodePath("")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=873154228]
 transform = Transform3D(-26.6454, 0, 0, 0, 1, 0, 0, 0, 16.1589, -2.80805, -1.9597, -2.0405)
 material_override = ExtResource("6_xpmf3")
 metadata/_edit_lock_ = true
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1709862148]
 transform = Transform3D(-86.1088, 0, 0, 0, -99.1748, 0, 0, 0, 82.2902, -5.01442, -1.9597, -2.24513)
 material_override = ExtResource("12_bmpjn")
 cast_shadow = 0
+flip_faces = true
+material = ExtResource("6_xpmf3")
 metadata/_edit_lock_ = true
 
-[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="." unique_id=423224173]
 transform = Transform3D(-0.817536, 0.491083, 0.300786, 0.0201359, -0.497614, 0.867165, 0.575525, 0.714995, 0.396929, 0, 2.75134, 0)
 shadow_enabled = true
 shadow_blur = 2.0
