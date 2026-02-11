@@ -1,7 +1,7 @@
 # Godot-Comic Shader
 ![Preview](https://i.postimg.cc/rwJVZXh9/kyubuscomicshader5.jpg)
 
-Work in progress Comic / Cell / Toon shader for the Godot game engine version 4.x. Supports upto 3 inputs to determine colour. Reacts to scene light and shadowcasting. Soft or hard banding, rimlight and the option for a half-tone texture between colours.
+Comic / Cell / Toon shader for the Godot game engine version 4.x. Supports upto 3 inputs to determine colour. Reacts to scene light and shadowcasting. Soft or hard banding, rimlight and the option for a half-tone texture between colours.
 
 
 |Shader Files     |Description|
